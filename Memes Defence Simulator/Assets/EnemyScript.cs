@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+public class EnemyScript : MonoBehaviour
+{
+    public static int MobHP = 100;
+    public Slider Healthbar;
+    public GameObject DeathAnim;
+    public GameObject Target;
+    public GameObject main;
+
+    void Update()
+    {
+        Healthbar.value = MobHP;
+    }
+    void Delay()
+    {
+        Destroy(main);
+    }
+    public void TakeDamage(int DamageAmount)
+    {
+        MobHP -= DamageAmount;
+        if (MobHP <= 0)
+        {
+            Target.SetActive(false);
+            DeathAnim.SetActive(true);
+            Invoke("Delay", 2.0f);
+        }
+        else
+        {
+
+        }
+
+    }
+}

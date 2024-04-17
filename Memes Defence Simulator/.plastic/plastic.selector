@@ -1,0 +1,4 @@
+repository "Memes Defence Simulator@cfvvde@cloud"
+  path "/"
+    br "/main"
+    co "/main"
