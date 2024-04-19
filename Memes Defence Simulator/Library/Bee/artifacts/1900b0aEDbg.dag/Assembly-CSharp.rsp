@@ -359,6 +359,7 @@
 "Assets/bullets/DamageSkript.cs"
 "Assets/bullets/deletBulletAfterTime.cs"
 "Assets/bullets/weapon.cs"
+"Assets/CHECK.cs"
 "Assets/clearmenu.cs"
 "Assets/Dialog.cs"
 "Assets/DialogManager.cs"
@@ -417,6 +418,7 @@
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexShakeB.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs"
+"Assets/Wave.cs"
 -langversion:9.0
 
 /deterministic
