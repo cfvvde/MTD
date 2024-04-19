@@ -359,6 +359,7 @@
 "Assets/bullets/DamageSkript.cs"
 "Assets/bullets/deletBulletAfterTime.cs"
 "Assets/bullets/weapon.cs"
+"Assets/CHECK.cs"
 "Assets/clearmenu.cs"
 "Assets/Dialog.cs"
 "Assets/DialogManager.cs"
