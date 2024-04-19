@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Wave : MonoBehaviour
 {
+    public List<int> enemiesID = new();
     // Start is called before the first frame update
     void Start()
     {
