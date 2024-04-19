@@ -27,10 +27,14 @@ public class move : MonoBehaviour
     {
         Walk(walkDir);
         DoGravity(charc.isGrounded);
+        if (transform.position.y < -100)
+        {
+            transform.position.y = 100;
+        }
     }
     private void Walk(Vector3 direction)
     {
-        charc.Move(direction * movementSpeed* Time.fixedDeltaTime);
+        charc.Move(direction * movementSpeed * Time.fixedDeltaTime);
     }
     private void DoGravity(bool isGrounded)
     {
@@ -44,7 +48,7 @@ public class move : MonoBehaviour
     }
     private void Jump(bool canJump)
     {
-        if (canJump) 
+        if (canJump)
         {
             velocity.y = jumpPower;
         }
