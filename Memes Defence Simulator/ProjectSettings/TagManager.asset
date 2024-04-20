@@ -7,8 +7,6 @@ TagManager:
   - MOB
   - collisionTag
   - Enemy
-  - item
-  - flor
   layers:
   - Default
   - TransparentFX
