@@ -6,20 +6,35 @@ public class FindNPCdial : MonoBehaviour
 {
     public GameObject itemFindEntety;
     public GameObject dialog;
+    private bool inrange = false;
 
-    public void OnTriggerStay()
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.tag=="Player")
+        {
+            inrange = true;
+
+        }
+    }
+    public void OnTriggerStay(Collider col)
     {
 
-        if (Input.GetKey(KeyCode.Z))
+        if (col.tag == "Player" && Input.GetKeyDown(KeyCode.E))
         {
             itemFindEntety.SetActive(false);
             TriggerDialog();
-
         }
 
 
     }
-    public void TriggerDialog()
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            inrange = false;
+        }
+    }
+    private void TriggerDialog()
     {
         dialog.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
