@@ -2,12 +2,12 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-/[Ll]ibrary/*
-/[Tt]emp/*
-/[Oo]bj/*
-/[Bb]uild/*
-/[Bb]uilds/*
-/[Ll]ogs/*
+/Memes Defence Simulator/[Ll]ibrary/
+/Memes Defence Simulator/[Tt]emp/
+/Memes Defence Simulator/[Oo]bj/
+/Memes Defence Simulator/[Bb]uild/
+/Memes Defence Simulator/[Bb]uilds/
+/Memes Defence Simulator/[Ll]ogs/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -74,3 +74,4 @@ crashlytics-build.properties
 /Memes Defence Simulator/Logs
 Memes Defence Simulator/Library/ArtifactDB
 /Memes Defence Simulator/Library/Bee
+/Memes Defence Simulator/Library/Artifacts

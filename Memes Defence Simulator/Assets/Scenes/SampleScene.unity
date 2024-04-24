@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -291,7 +291,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.101250015, y: 0.24666668}
   m_AnchorMax: {x: 0.89500004, y: 0.48666668}
-  m_AnchoredPosition: {x: 2, y: -0.99998474}
+  m_AnchoredPosition: {x: 2, y: -1}
   m_SizeDelta: {x: 165, y: 342}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &157629641
@@ -2010,7 +2010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3f9720e03218c43ba02a9878f8c82e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: 473717250}
+  navMeshAgent: {fileID: 0}
   player: {fileID: 1009532744}
 --- !u!195 &473717250
 NavMeshAgent:
@@ -3306,7 +3306,7 @@ Transform:
   m_GameObject: {fileID: 702091663}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1992.7, y: 10.37, z: -138.83}
+  m_LocalPosition: {x: -1994.6, y: 10.37, z: -144.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4595,7 +4595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP_ovrlay: {fileID: 1044218221}
   guidispl: {fileID: 600080835}
-  wave1Test: {fileID: 702091663}
+  wave1Test: {fileID: 0}
 --- !u!114 &1060444754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4705,6 +4705,7 @@ GameObject:
   - component: {fileID: 1105579882}
   - component: {fileID: 1105579885}
   - component: {fileID: 1105579886}
+  - component: {fileID: 1105579887}
   m_Layer: 0
   m_Name: first plato
   m_TagString: flor
@@ -4826,7 +4827,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
 --- !u!114 &1105579887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4858,8 +4858,6 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
-=======
->>>>>>> recovery
 --- !u!1 &1118214812
 GameObject:
   m_ObjectHideFlags: 0
