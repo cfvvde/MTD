@@ -165,7 +165,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.101250015, y: 0.24666668}
   m_AnchorMax: {x: 0.89500004, y: 0.48666668}
-  m_AnchoredPosition: {x: 2, y: -1}
+  m_AnchoredPosition: {x: 2, y: -0.99998474}
   m_SizeDelta: {x: 165, y: 342}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &157629641
@@ -1751,7 +1751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3f9720e03218c43ba02a9878f8c82e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  naveshag: {fileID: 473717250}
+  navMeshAgent: {fileID: 473717250}
   player: {fileID: 1009532744}
 --- !u!195 &473717250
 NavMeshAgent:
@@ -3047,7 +3047,7 @@ Transform:
   m_GameObject: {fileID: 702091663}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1994.6, y: 10.37, z: -144.4}
+  m_LocalPosition: {x: -1992.7, y: 10.37, z: -138.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4336,6 +4336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP_ovrlay: {fileID: 1044218221}
   guidispl: {fileID: 600080835}
+  wave1Test: {fileID: 702091663}
 --- !u!114 &1060444754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4445,7 +4446,6 @@ GameObject:
   - component: {fileID: 1105579882}
   - component: {fileID: 1105579885}
   - component: {fileID: 1105579886}
-  - component: {fileID: 1105579887}
   m_Layer: 0
   m_Name: first plato
   m_TagString: flor
@@ -4567,18 +4567,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1105579887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105579880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1118214812
 GameObject:
   m_ObjectHideFlags: 0
@@ -5086,6 +5074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP_ovrlay: {fileID: 1044218221}
   guidispl: {fileID: 600080835}
+  wave1Test: {fileID: 0}
 --- !u!1 &1380077330
 GameObject:
   m_ObjectHideFlags: 0
@@ -7092,6 +7081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d14fb286868077f4f8e24860622c4ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MobHP: 100
   Healthbar: {fileID: 1813464644}
   DeathAnim: {fileID: 1954151718}
   Target: {fileID: 1921461094}

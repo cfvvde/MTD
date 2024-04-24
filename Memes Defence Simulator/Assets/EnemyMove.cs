@@ -5,17 +5,41 @@ using UnityEngine.AI;
 
 public class EnemyMove : MonoBehaviour
 {
-    [SerializeField]
-    private NavMeshAgent naveshag;
-    [SerializeField]
-    private Transform player;
+    public NavMeshAgent navMeshAgent;
+
+    public Transform player;
+
+    private int health;
+
+    private GameObject core;
     void Start()
     {
-        
+        foreach (Transform childTransform in transform)
+        {
+            GameObject childGameObject = childTransform.gameObject;
+            // Do something with 'childGameObject'
+            switch (childGameObject.name)
+            {
+                case "dummy":
+                    core = childGameObject;
+                    break;
+            }
+        }
     }
 
     void Update()
     {
-        naveshag.SetDestination(player.position);
+        health = core.GetComponent<EnemyScript>().MobHP;
+
+        switch (health <= 0)
+        {
+            case true:
+                navMeshAgent.SetDestination(transform.position);
+                break;
+
+            case false:
+                navMeshAgent.SetDestination(player.position);
+                break;
+        }
     }
 }

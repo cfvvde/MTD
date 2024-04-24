@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 public class EnemyScript : MonoBehaviour
 {
-    public static int MobHP = 100;
+    public int MobHP = 100;
     public Slider Healthbar;
     public GameObject DeathAnim;
     public GameObject Target;
