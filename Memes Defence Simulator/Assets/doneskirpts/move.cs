@@ -29,7 +29,7 @@ public class move : MonoBehaviour
         DoGravity(charc.isGrounded);
         if (transform.position.y < -1000)
         {
-            transform.position.Set(transform.position.x, 10,transform.position.z);
+            transform.position.Set(transform.position.x, 10, transform.position.z);
         }
     }
     private void Walk(Vector3 direction)
