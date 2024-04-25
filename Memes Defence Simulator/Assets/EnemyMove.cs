@@ -6,40 +6,75 @@ using UnityEngine.AI;
 public class EnemyMove : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
-
     public Transform player;
-
     private int health;
-
     private GameObject core;
+
+
+    string targetTag = "Player";
+
+    private void Awake()
+    {
+        Start();
+    }
+
     void Start()
+    {
+        if (player == null)
+        {
+            GameObject objWithTag = GameObject.FindWithTag(targetTag);
+            if (objWithTag != null)
+            {
+                player = objWithTag.transform;
+                Debug.Log("Target transform set to " + objWithTag.name + "'s transform.");
+            }
+            else
+            {
+                Debug.LogError("No object found with tag: " + targetTag);
+            }
+        }
+        if (navMeshAgent == null)
+            if (GetComponent<NavMeshAgent>() != null)
+                navMeshAgent = GetComponent<NavMeshAgent>();
+        assignCore();
+    }
+
+    void assignCore()
     {
         foreach (Transform childTransform in transform)
         {
             GameObject childGameObject = childTransform.gameObject;
             // Do something with 'childGameObject'
-            switch (childGameObject.name)
+
+            if (childGameObject.name == "core")
             {
-                case "dummy":
-                    core = childGameObject;
-                    break;
+                core = childGameObject;
             }
         }
     }
 
     void Update()
     {
-        health = core.GetComponent<EnemyScript>().MobHP;
-
-        switch (health <= 0)
+        if (core != null)
         {
-            case true:
-                navMeshAgent.SetDestination(transform.position);
-                break;
-
-            case false:
-                navMeshAgent.SetDestination(player.position);
-                break;
+            health = core.GetComponent<EnemyScript>().MobHP;
         }
+        else
+        {
+            assignCore();
+            return;
+        }
+
+        if (navMeshAgent.isOnNavMesh)
+            switch (health <= 0)
+            {
+                case true:
+                    navMeshAgent.SetDestination(transform.position);
+                    break;
+
+                case false:
+                    navMeshAgent.SetDestination(player.position);
+                    break;
+            }
     }
 }

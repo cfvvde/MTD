@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3f9720e03218c43ba02a9878f8c82e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  naveshag: {fileID: 2023492959067332980}
+  navMeshAgent: {fileID: 0}
   player: {fileID: 0}
 --- !u!54 &5037784133442578930
 Rigidbody:
@@ -1032,7 +1032,7 @@ GameObject:
   - component: {fileID: 6443494572292530323}
   - component: {fileID: 7047996661294809553}
   m_Layer: 0
-  m_Name: dummy
+  m_Name: core
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1080,10 +1080,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d14fb286868077f4f8e24860622c4ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MobHP: 100
   Healthbar: {fileID: 2964606108513573722}
   DeathAnim: {fileID: 875243658578160439}
   Target: {fileID: 7831773819824806563}
   main: {fileID: 5531834674971668216}
+  texture: {fileID: 0}
 --- !u!65 &7047996661294809553
 BoxCollider:
   m_ObjectHideFlags: 0

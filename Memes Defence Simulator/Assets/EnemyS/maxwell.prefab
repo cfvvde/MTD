@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7792413175635111072}
   - component: {fileID: 6283141563838138928}
   m_Layer: 0
-  m_Name: dummy
+  m_Name: core
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,10 +61,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d14fb286868077f4f8e24860622c4ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MobHP: 100
   Healthbar: {fileID: 2831733005473940658}
   DeathAnim: {fileID: 8619753809265544507}
   Target: {fileID: 1012825378232296571}
   main: {fileID: 4854477560558322887}
+  texture: {fileID: 4434417101254018506}
 --- !u!65 &6283141563838138928
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -474,7 +476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3f9720e03218c43ba02a9878f8c82e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  naveshag: {fileID: 1331066517115028037}
+  navMeshAgent: {fileID: 0}
   player: {fileID: 0}
 --- !u!54 &4719763679341975183
 Rigidbody:
@@ -913,7 +915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fa4a85ca376136041a6cec923c229f50, type: 3}
       propertyPath: m_Name
-      value: '[etkjdoiqwhuiorhvuier'
+      value: texture
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -923,5 +925,10 @@ PrefabInstance:
 --- !u!4 &3945688149217877872 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fa4a85ca376136041a6cec923c229f50, type: 3}
+  m_PrefabInstance: {fileID: 3552037227903383707}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4434417101254018506 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fa4a85ca376136041a6cec923c229f50, type: 3}
   m_PrefabInstance: {fileID: 3552037227903383707}
   m_PrefabAsset: {fileID: 0}

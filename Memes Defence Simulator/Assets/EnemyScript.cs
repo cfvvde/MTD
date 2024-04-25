@@ -18,7 +18,7 @@ public class EnemyScript : MonoBehaviour
         Healthbar.value = MobHP;
     }
     void Delay()
-    {   
+    {
 
         Destroy(main);
     }
@@ -28,7 +28,8 @@ public class EnemyScript : MonoBehaviour
         if (MobHP <= 0)
         {
             main.GetComponent<NavMeshAgent>().enabled = false;
-            texture.SetActive(false);
+            if (texture != null)
+                texture.SetActive(false);
             Target.SetActive(false);
             DeathAnim.SetActive(true);
             Invoke("Delay", 2.0f);
