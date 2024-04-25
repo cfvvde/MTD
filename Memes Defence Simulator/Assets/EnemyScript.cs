@@ -28,6 +28,7 @@ public class EnemyScript : MonoBehaviour
         if (MobHP <= 0)
         {
             main.GetComponent<NavMeshAgent>().enabled = false;
+            Target.GetComponent<AudioSource>().enabled = false;
             if (texture != null)
                 texture.SetActive(false);
             main.GetComponent<BoxCollider>().enabled = false;
