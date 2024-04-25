@@ -756,13 +756,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5720181193217826326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a282662d7b55a47ba590da69042384, type: 3}
+  m_Script: {fileID: 11500000, guid: d820101f744be5248b149e87d828866f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio0: {fileID: 8300000, guid: ef969983ea9bb284bb4a3317d523ec4e, type: 3}
-  audio1: {fileID: 8300000, guid: 5da3c69a52e9a334489a78af75c9d4ab, type: 3}
-  audio2: {fileID: 8300000, guid: fef03240e15bf2e4f9f43c77548edb46, type: 3}
-  audio3: {fileID: 8300000, guid: 11c88066675de5f49865db5a4b5a62c6, type: 3}
+  audio0: {fileID: 8300000, guid: 5da3c69a52e9a334489a78af75c9d4ab, type: 3}
+  audio1: {fileID: 8300000, guid: fef03240e15bf2e4f9f43c77548edb46, type: 3}
+  audio2: {fileID: 8300000, guid: 11c88066675de5f49865db5a4b5a62c6, type: 3}
+  audio3: {fileID: 8300000, guid: ef969983ea9bb284bb4a3317d523ec4e, type: 3}
+  timeDiff: 3
 --- !u!82 &1888508078758879156
 AudioSource:
   m_ObjectHideFlags: 0
