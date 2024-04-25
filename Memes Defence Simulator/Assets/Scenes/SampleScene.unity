@@ -6065,19 +6065,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5531834674971668216, guid: 20d6f8b14a87ff44997e33c54e383f2c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5847169850344786370, guid: 20d6f8b14a87ff44997e33c54e383f2c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5847169850344786370, guid: 20d6f8b14a87ff44997e33c54e383f2c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5847169850344786370, guid: 20d6f8b14a87ff44997e33c54e383f2c, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6443494572292530323, guid: 20d6f8b14a87ff44997e33c54e383f2c, type: 3}
       propertyPath: texture

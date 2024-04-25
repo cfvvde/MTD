@@ -30,6 +30,7 @@ public class EnemyScript : MonoBehaviour
             main.GetComponent<NavMeshAgent>().enabled = false;
             if (texture != null)
                 texture.SetActive(false);
+            main.GetComponent<BoxCollider>().enabled = false;
             Target.SetActive(false);
             DeathAnim.SetActive(true);
             Invoke("Delay", 2.0f);

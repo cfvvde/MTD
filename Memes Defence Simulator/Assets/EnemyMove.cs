@@ -26,7 +26,7 @@ public class EnemyMove : MonoBehaviour
             if (objWithTag != null)
             {
                 player = objWithTag.transform;
-                Debug.Log("Target transform set to " + objWithTag.name + "'s transform.");
+                //Debug.Log("Target transform set to " + objWithTag.name + "'s transform.");
             }
             else
             {

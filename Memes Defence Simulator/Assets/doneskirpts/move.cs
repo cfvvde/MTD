@@ -29,7 +29,7 @@ public class move : MonoBehaviour
         DoGravity(charc.isGrounded);
         if (transform.position.y < -1000)
         {
-            transform.position.Set(transform.position.x, 10, transform.position.z);
+            TeleportObjToPosition(transform, new Vector3(transform.position.x, 100, transform.position.z));
         }
     }
     private void Walk(Vector3 direction)
@@ -46,6 +46,12 @@ public class move : MonoBehaviour
         charc.Move(velocity * Time.fixedDeltaTime);
 
     }
+
+    void TeleportObjToPosition(Transform objTransform, Vector3 newPosition)
+    {
+        objTransform.position = newPosition;
+    }
+
     private void Jump(bool canJump)
     {
         if (canJump)
