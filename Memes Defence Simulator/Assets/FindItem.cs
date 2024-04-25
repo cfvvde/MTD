@@ -10,7 +10,7 @@ public class FindItem : MonoBehaviour
     public GameObject itemFindEntety;
     public static bool PistolFind;
     public Dialog dialog;
-    private bool inrange = false;
+    private bool inRange = false;
 
     private void TriggerDialog()
     {
@@ -21,14 +21,14 @@ public class FindItem : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            inrange = true;
+            inRange = true;
 
         }
     }
     public void OnTriggerStay(Collider col)
     {
 
-        if (inrange == true && Input.GetKeyDown(KeyCode.E))
+        if (inRange == true && Input.GetKeyDown(KeyCode.E))
         {
             itemFindEntety.SetActive(false);
             PistolFind = true;
@@ -41,7 +41,7 @@ public class FindItem : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            inrange = false;
+            inRange = false;
         }
     }
 }

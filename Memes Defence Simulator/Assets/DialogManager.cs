@@ -11,11 +11,11 @@ public class DialogManager : MonoBehaviour
 {
     public Text nameText;
     public Text dialogText;
-    public GameObject FaceSprite;
+    public GameObject faceSprite;
 
     public Animator animator;
-    
-   
+
+
 
     private Queue<string> sentances;
     private Queue<Texture> imges;
@@ -23,9 +23,9 @@ public class DialogManager : MonoBehaviour
     {
         imges = new Queue<Texture>();
         sentances = new Queue<string>();
-        
+
     }
-    
+
     public void StartDialog(Dialog dialog)
     {
         UnityEngine.Cursor.lockState = CursorLockMode.None;
@@ -47,7 +47,7 @@ public class DialogManager : MonoBehaviour
         {
             imges.Enqueue(image);
         }
-        
+
 
         DisplayNextSentance();
 
@@ -55,7 +55,7 @@ public class DialogManager : MonoBehaviour
 
     public void DisplayNextSentance()
     {
-        
+
 
 
 
@@ -67,9 +67,9 @@ public class DialogManager : MonoBehaviour
 
         string sentence = sentances.Dequeue();
         Texture image = imges.Dequeue();
-        FaceSprite.GetComponent<RawImage>().texture=image;
+        faceSprite.GetComponent<RawImage>().texture = image;
         StartCoroutine(TypeSentence(sentence));
-        
+
 
     }
     IEnumerator TypeSentence(string sentence)
