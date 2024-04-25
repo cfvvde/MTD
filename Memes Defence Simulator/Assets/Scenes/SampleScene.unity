@@ -3072,7 +3072,6 @@ MonoBehaviour:
   - 1
   enemObj:
   - {fileID: 5531834674971668216, guid: 20d6f8b14a87ff44997e33c54e383f2c, type: 3}
-  - {fileID: 4854477560558322887, guid: f742568b449b07b49aa677f6c4fbaacc, type: 3}
   spawnPoints:
   - {fileID: 702091663}
 --- !u!135 &702091665
@@ -7653,7 +7652,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 89066405fb0ebc04193d6b734835f33e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
