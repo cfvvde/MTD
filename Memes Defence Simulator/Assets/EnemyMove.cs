@@ -8,7 +8,7 @@ public class EnemyMove : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     public Transform player;
     private int health;
-    private GameObject core;
+    public GameObject core;
 
 
     string targetTag = "Player";
@@ -39,7 +39,7 @@ public class EnemyMove : MonoBehaviour
         assignCore();
     }
 
-    void assignCore()
+    public void assignCore()
     {
         foreach (Transform childTransform in transform)
         {

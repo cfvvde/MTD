@@ -4,66 +4,49 @@ using UnityEngine;
 
 public class guiWeponChange : MonoBehaviour
 {
-    public static GameObject weapon1;
-    public static GameObject weapon2;
-    public static GameObject weapon3;
-    public static GameObject weapon4;
-    public static GameObject weapon5;
-    public static GameObject weapon6;
-    public static GameObject weapon7;
-    public static GameObject weapon8;
-    public static GameObject weapon9;
+    public GameObject[] weapons = new GameObject[9];
+
+    private float currTime = 0;
+    public float deadTimeSeconds = 0.5f; // time that you cant switch weapons for
+                                         // after switching to another weapon
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Alpha1))
+        if (currTime + deadTimeSeconds <= Time.time)
         {
-            //weapon1.SetActive(true);
-            //weapon2.SetActive(false);
-            //
-            //weapon8.SetActive(false);
-            Select(weapon1);
-
-        }
-        if (Input.GetKey(KeyCode.Alpha2))
-        {
-            weapon1.SetActive(false);
-            weapon2.SetActive(true);
-
-            weapon8.SetActive(false);
-
-        }
-        if (Input.GetKey(KeyCode.Alpha8) && foundItems.foundMarksman == true)
-        {
-            weapon1.SetActive(false);
-            weapon2.SetActive(false);
-
-            weapon8.SetActive(true);
+            if (Input.GetKey(KeyCode.Alpha1))
+            {
+                select(weapons[0]);
+            }
+            if (Input.GetKey(KeyCode.Alpha2))
+            {
+                select(weapons[1]);
+            }
+            if (Input.GetKey(KeyCode.Alpha8) && foundItems.foundMarksman == true)
+            {
+                select(weapons[7]);
+            }
 
         }
 
     }
 
-    private void Select(GameObject W)
+    private void select(GameObject toSelect)
     {
+        currTime = Time.time;
+        foreach (GameObject wpn in weapons)
+        {
+            if (wpn == null)
+                continue;
 
-        if (W == weapon1)
-        {
-            W.SetActive(!W.activeInHierarchy);
-            weapon2.SetActive(false);
-            weapon8.SetActive(false);
-        }
-        if (W == weapon2)
-        {
-            W.SetActive(!W.activeInHierarchy);
-            weapon1.SetActive(false);
-            weapon8.SetActive(false);
-        }
-        if (W == weapon8)
-        {
-            W.SetActive(!W.activeInHierarchy);
-            weapon1.SetActive(false);
-            weapon2.SetActive(false);
+            if (wpn == toSelect)
+            {
+                wpn.SetActive(!wpn.activeInHierarchy);
+            }
+            else
+            {
+                wpn.SetActive(false);
+            }
         }
     }
 }

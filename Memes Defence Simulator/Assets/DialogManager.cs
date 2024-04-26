@@ -17,12 +17,10 @@ public class DialogManager : MonoBehaviour
 
 
 
-    private Queue<string> sentances;
-    private Queue<Texture> imges;
+    private Queue<string> sentances = new();
+    private Queue<Texture> imges = new();
     void Start()
     {
-        imges = new Queue<Texture>();
-        sentances = new Queue<string>();
 
     }
 
@@ -56,9 +54,6 @@ public class DialogManager : MonoBehaviour
     public void DisplayNextSentance()
     {
 
-
-
-
         if (sentances.Count == 0)
         {
             EndDialog();
@@ -69,7 +64,6 @@ public class DialogManager : MonoBehaviour
         Texture image = imges.Dequeue();
         faceSprite.GetComponent<RawImage>().texture = image;
         StartCoroutine(TypeSentence(sentence));
-
 
     }
     IEnumerator TypeSentence(string sentence)

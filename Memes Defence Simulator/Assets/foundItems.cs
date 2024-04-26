@@ -15,8 +15,7 @@ public class foundItems : MonoBehaviour
     private void TriggerDialog()
     {
         FindObjectOfType<DialogManager>().StartDialog(dialog);
-
-
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
     }
     public void OnTriggerEnter(Collider other)
     {

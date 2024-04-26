@@ -11,6 +11,9 @@ public class move : MonoBehaviour
     private Vector3 walkDir;
     private Vector3 velocity;
 
+    public float minimalY = -100;
+    public float targetY = 200;
+
 
     private void Start()
     {
@@ -27,9 +30,9 @@ public class move : MonoBehaviour
     {
         Walk(walkDir);
         DoGravity(charc.isGrounded);
-        if (transform.position.y < -1000)
+        if (transform.position.y < minimalY)
         {
-            TeleportObjToPosition(transform, new Vector3(transform.position.x, 100, transform.position.z));
+            TeleportObjToPosition(transform, new Vector3(transform.position.x, targetY, transform.position.z));
         }
     }
     private void Walk(Vector3 direction)
