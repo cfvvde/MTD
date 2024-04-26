@@ -10,7 +10,7 @@ public class weapon : MonoBehaviour
     public Camera playerCamera;
 
     float currentTime = 0;
-    public float reloadTime = 1; // seconds
+    public float reloadTime = 0.1f; 
     private float maxDistance = 100;
 
     void Update()

@@ -759,10 +759,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d820101f744be5248b149e87d828866f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio0: {fileID: 8300000, guid: 5da3c69a52e9a334489a78af75c9d4ab, type: 3}
-  audio1: {fileID: 8300000, guid: fef03240e15bf2e4f9f43c77548edb46, type: 3}
-  audio2: {fileID: 8300000, guid: 11c88066675de5f49865db5a4b5a62c6, type: 3}
-  audio3: {fileID: 8300000, guid: ef969983ea9bb284bb4a3317d523ec4e, type: 3}
+  audio0: {fileID: 8300000, guid: 721dc7f3bb59c9744bbc287acd84025b, type: 3}
+  audio1: {fileID: 8300000, guid: 240ce406cb9c3c84ab30d4bf32049e09, type: 3}
+  audio2: {fileID: 8300000, guid: 3cf55c7ed75bccc4d93c73d7a66b1580, type: 3}
+  audio3: {fileID: 8300000, guid: 1985d073a59b6f74eb33b8ac4edafd5a, type: 3}
   timeDiff: 3
 --- !u!82 &1888508078758879156
 AudioSource:
@@ -1133,8 +1133,8 @@ BoxCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.1688833, y: 1, z: 1.258946}
-  m_Center: {x: -0.0022003814, y: 0.00000010553837, z: -0.03590741}
+  m_Size: {x: 1.61677, y: 1.0953676, z: 1.7622584}
+  m_Center: {x: -0.029042233, y: 0.047683924, z: 0.10229371}
 --- !u!82 &7147118248830634513
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1147,7 +1147,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2b195108d1af5454883dc205716cb489, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0

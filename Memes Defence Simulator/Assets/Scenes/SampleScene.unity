@@ -2622,7 +2622,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20625001, y: 0.08666668}
   m_AnchorMax: {x: 0.4025, y: 0.2555555}
-  m_AnchoredPosition: {x: 1.5, y: 2}
+  m_AnchoredPosition: {x: 1.4996033, y: 2}
   m_SizeDelta: {x: 3, y: -46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &614960202
@@ -3066,10 +3066,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1485359027dbeae44b7dd362526cffd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemiesID: 0000000001000000
+  enemiesID: 00000000
   delays:
   - 5
-  - 1
   enemObj:
   - {fileID: 5531834674971668216, guid: 20d6f8b14a87ff44997e33c54e383f2c, type: 3}
   spawnPoints:
@@ -5057,8 +5056,8 @@ MonoBehaviour:
   bullet: {fileID: 5765525427192782505, guid: 82d6ef41b1d9f0d43945dfa1a2ada7dd, type: 3}
   BulletForce: 10000
   spawn: {fileID: 1080313563}
-  playerCamera: {fileID: 0}
-  reloadTime: 1
+  playerCamera: {fileID: 399614506}
+  reloadTime: 0.1
 --- !u!1 &1308421292
 GameObject:
   m_ObjectHideFlags: 0
@@ -7516,6 +7515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 10
   Player: {fileID: 0}
+  imunitufram: 10
 --- !u!114 &1921461101
 MonoBehaviour:
   m_ObjectHideFlags: 0
