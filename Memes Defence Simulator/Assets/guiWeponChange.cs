@@ -4,42 +4,66 @@ using UnityEngine;
 
 public class guiWeponChange : MonoBehaviour
 {
-    public GameObject W1;
-    public GameObject W2;
-    public GameObject W3;
-    public GameObject W4;
-    public GameObject W5;
-    public GameObject W6;
-    public GameObject W7;
-    public GameObject W8;
-    public GameObject W9;
+    public static GameObject weapon1;
+    public static GameObject weapon2;
+    public static GameObject weapon3;
+    public static GameObject weapon4;
+    public static GameObject weapon5;
+    public static GameObject weapon6;
+    public static GameObject weapon7;
+    public static GameObject weapon8;
+    public static GameObject weapon9;
 
     private void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.Alpha1))
         {
-            W1.SetActive(true);
-            W2.SetActive(false);
-
-            W8.SetActive(false);
+            //weapon1.SetActive(true);
+            //weapon2.SetActive(false);
+            //
+            //weapon8.SetActive(false);
+            Select(weapon1);
 
         }
         if (Input.GetKey(KeyCode.Alpha2))
         {
-            W1.SetActive(false);
-            W2.SetActive(true);
+            weapon1.SetActive(false);
+            weapon2.SetActive(true);
 
-            W8.SetActive(false);
+            weapon8.SetActive(false);
 
         }
-        if (Input.GetKey(KeyCode.Alpha8) && FindItem.PistolFind == true)
+        if (Input.GetKey(KeyCode.Alpha8) && foundItems.foundMarksman == true)
         {
-            W1.SetActive(false);
-            W2.SetActive(false);
+            weapon1.SetActive(false);
+            weapon2.SetActive(false);
 
-            W8.SetActive(true);
+            weapon8.SetActive(true);
 
         }
 
+    }
+
+    private void Select(GameObject W)
+    {
+
+        if (W == weapon1)
+        {
+            W.SetActive(!W.activeInHierarchy);
+            weapon2.SetActive(false);
+            weapon8.SetActive(false);
+        }
+        if (W == weapon2)
+        {
+            W.SetActive(!W.activeInHierarchy);
+            weapon1.SetActive(false);
+            weapon8.SetActive(false);
+        }
+        if (W == weapon8)
+        {
+            W.SetActive(!W.activeInHierarchy);
+            weapon1.SetActive(false);
+            weapon2.SetActive(false);
+        }
     }
 }
