@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2623,7 +2623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20625001, y: 0.08666668}
   m_AnchorMax: {x: 0.4025, y: 0.2555555}
-  m_AnchoredPosition: {x: 1.4996033, y: 2}
+  m_AnchoredPosition: {x: 1.4989929, y: 2}
   m_SizeDelta: {x: 3, y: -46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &614960202
@@ -3783,6 +3783,8 @@ GameObject:
   - component: {fileID: 868207466}
   - component: {fileID: 868207463}
   - component: {fileID: 868207468}
+  - component: {fileID: 868207470}
+  - component: {fileID: 868207469}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
@@ -3806,17 +3808,16 @@ MonoBehaviour:
   dialog:
     name: "\u0410\u0432\u0442\u043E\u0440"
     sentances:
-    - "\u0425\u043C\u043C\u043C..."
-    - "\u041F\u043E\u0445\u043E\u0436\u0435 \u0447\u0442\u043E \u0442\u0430\u043A\u0438\u0435
-      \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B \u0431\u0443\u0434\u0443\u0442
-      \u0432\u0441\u0442\u0440\u0435\u0447\u0430\u0442\u044C\u0441\u044F \u043D\u0430
-      \u0432\u0441\u0435\u0445 \u043A\u0440\u0430\u044F\u0445 \u043A\u0430\u0440\u0442\u044B"
-    - "\u0412\u043E\u0437\u043C\u043E\u0436\u043D\u043E \u043E\u043D\u0438 \u0434\u043B\u044F
-      \u0447\u0435\u0433\u043E-\u0442\u043E \u043D\u0443\u0436\u043D\u044B?"
+    - "\u041F\u043E\u0445\u043E\u0436\u0435 \u0442\u044B \u043D\u0430\u0448\u0451\u043B
+      \u043F\u043E\u0441\u0430\u0445\u043B\u043A\u0443"
+    - "\u0412\u043E\u0437\u043C\u043E\u0436\u043D\u043E \u0442\u0430\u043A\u0438\u0435
+      \u0436\u0435 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B \u0431\u0443\u0434\u0443\u0442
+      \u0432 \u0434\u0440\u0443\u0433\u0438\u0445 \u043C\u0435\u0441\u0442\u0430\u0445"
     img:
     - {fileID: 2800000, guid: 69e861b158cda2142b3326fce874efeb, type: 3}
-    - {fileID: 2800000, guid: 62ba59da75a081348a2151e6c347ea29, type: 3}
     - {fileID: 2800000, guid: 69e861b158cda2142b3326fce874efeb, type: 3}
+  dialoge: {fileID: 0}
+  dial: {fileID: 0}
 --- !u!33 &868207466
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3862,6 +3863,51 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 14.376587, y: 10.16014, z: 13.137222}
   m_Center: {x: -1.720398, y: 4.114781, z: 2.436287}
+--- !u!114 &868207469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868207462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbcddcaebf576384193f64d16e6e0a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stories:
+  - <Tag>k__BackingField: "\u0434\u0438\u0430\u043B\u043E\u04331"
+    <Text>k__BackingField: "\u0412\u043E\u0442 \u044D\u0442\u043E \u0434\u0430 \u0442\u044B
+      \u043D\u0430\u0448\u0451\u043B \u043F\u0430\u0441\u0445\u0430\u043B\u043A\u0443"
+    <Answer>k__BackingField:
+    - <Text>k__BackingField: "\u0443\u0440\u0430"
+      <ReposeText>k__BackingField: "\u0434\u0438\u0430\u043B\u043E\u04332"
+    - <Text>k__BackingField: "\u0443\u0436\u0430\u0441"
+      <ReposeText>k__BackingField: "\u0434\u0438\u0430\u043B\u043E\u04333"
+  - <Tag>k__BackingField: "\u0434\u0438\u0430\u043B\u043E\u04332"
+    <Text>k__BackingField: "\u041A\u0430\u043A\u043E\u0439 \u0438\u043D\u0442\u0443\u0437\u0438\u0430\u0437\u043C!"
+    <Answer>k__BackingField:
+    - <Text>k__BackingField: "\u0447\u0442\u043E \u0435\u0441\u0442\u044C"
+      <ReposeText>k__BackingField: "\u0434\u0438\u0430\u043B\u043E\u04334"
+  - <Tag>k__BackingField: "\u0434\u0438\u0430\u043B\u043E\u04333"
+    <Text>k__BackingField: "\u0438\u0434\u0438 \u043D\u0430\u0445"
+    <Answer>k__BackingField:
+    - <Text>k__BackingField: "\u0447\u0442\u043E \u0435\u0441\u0442\u044C"
+      <ReposeText>k__BackingField: "\u0434\u0438\u0430\u043B\u043E\u04334"
+--- !u!114 &868207470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868207462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d7ef9c97239f04db81aa850cfd2850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _disableTags:
+  - "\u0434\u0438\u0430\u043B\u043E\u04334"
 --- !u!1 &931832913
 GameObject:
   m_ObjectHideFlags: 0
@@ -3908,10 +3954,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a1ff2df65a12f4e9a8c778a0da7b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 25
+  damage: 10
   playerCamera: {fileID: 0}
   lineRenderer: {fileID: 0}
-  reloadTime: 1
+  reloadTime: 0.3
 --- !u!120 &931832916
 LineRenderer:
   serializedVersion: 2
@@ -4035,7 +4081,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &940376404
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5163,7 +5209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  playerCamera: {fileID: 399614506}
+  playerCamera: {fileID: 0}
   lineRenderer: {fileID: 0}
   reloadTime: 0.3
 --- !u!120 &1215732613

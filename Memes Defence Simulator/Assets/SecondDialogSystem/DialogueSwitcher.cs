@@ -20,7 +20,7 @@ namespace Dialogue
         private async void Disable(DialogueStory.Story story)
         {
             if(_disableTags.All(disableTag => story.Tag != disableTag)) return;
-            await Task.Delay(10000);
+            await Task.Delay(2000);
             _dialogueStory.gameObject.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
         }
