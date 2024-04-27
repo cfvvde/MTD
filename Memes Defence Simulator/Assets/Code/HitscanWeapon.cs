@@ -8,6 +8,9 @@ public class weapon : MonoBehaviour
     public int damage = 10;
     public Camera playerCamera;
     public LineRenderer lineRenderer;
+    float lineRadius = 0;
+    public float lineDecayAmount = 0.01f;
+    public float maxLineRadus = 1f;
 
     float currentTime = 0;
     public float reloadTime = 0.3f;
@@ -18,6 +21,19 @@ public class weapon : MonoBehaviour
         {
             playerCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         }
+        StartCoroutine(lineDecay());
+    }
+    // runs every 10ms
+    private IEnumerator lineDecay()
+    {
+        while (this)
+        {
+            lineRenderer.endWidth = lineRadius;
+            lineRenderer.startWidth = lineRadius;
+            lineRadius -= lineDecayAmount;
+            yield return new WaitForSeconds(0.01f);
+        }
+        yield return new WaitForSeconds(lineDecayAmount);
     }
 
     void FixedUpdate()
@@ -32,17 +48,11 @@ public class weapon : MonoBehaviour
             Debug.LogError($"object {transform.name} has no component: 'LineRenderer'", transform);
         }
 
-        // Make the line invisible by setting its positions to the same point
-        if (currentTime + 0.1f < Time.time)
-        {
-            lineRenderer.SetPosition(0, Vector3.zero);
-            lineRenderer.SetPosition(1, Vector3.zero);
-        }
-
 
         if (Input.GetMouseButton(0) && currentTime + reloadTime < Time.time)
         {
             currentTime = Time.time;
+            lineRadius += maxLineRadus;
 
             Vector3 cursorPosition = Input.mousePosition;
             cursorPosition.z = playerCamera.nearClipPlane;
@@ -79,5 +89,9 @@ public class weapon : MonoBehaviour
                 lineRenderer.SetPosition(1, pointInFront);
             }
         }
+    }
+    void f(string fname)
+    {
+        Invoke(fname, 0);
     }
 }
