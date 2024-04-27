@@ -7,7 +7,3 @@ sceneSetups:
   isLoaded: 1
   isActive: 0
   isSubScene: 0
-- path: Assets/Pure Poly/Free Low Poly Nature Pack/Scenes/Demo_01.unity
-  isLoaded: 1
-  isActive: 0
-  isSubScene: 0
