@@ -90,8 +90,4 @@ public class weapon : MonoBehaviour
             }
         }
     }
-    void f(string fname)
-    {
-        Invoke(fname, 0);
-    }
 }
