@@ -108,10 +108,10 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 1
     agentHeight: 10
-    agentSlope: 36.2
-    agentClimb: 0.4
-    ledgeDropHeight: 0
-    maxJumpAcrossDistance: 0
+    agentSlope: 20.4
+    agentClimb: 3
+    ledgeDropHeight: 2
+    maxJumpAcrossDistance: 10
     minRegionArea: 2
     manualCellSize: 0
     cellSize: 0.33333334
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: d3bc3058e163f24418c9c304318bd830, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 6c59bb853c48ecd418d5ca5e119f4252, type: 2}
 --- !u!1 &157629639
 GameObject:
   m_ObjectHideFlags: 0
@@ -2623,7 +2623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20625001, y: 0.08666668}
   m_AnchorMax: {x: 0.4025, y: 0.2555555}
-  m_AnchoredPosition: {x: 1.4989929, y: 2}
+  m_AnchoredPosition: {x: 1.4984741, y: 2}
   m_SizeDelta: {x: 3, y: -46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &614960202
@@ -3957,6 +3957,8 @@ MonoBehaviour:
   damage: 10
   playerCamera: {fileID: 0}
   lineRenderer: {fileID: 0}
+  lineDecayAmount: 0.01
+  maxLineRadus: 1
   reloadTime: 0.3
 --- !u!120 &931832916
 LineRenderer:
@@ -5211,6 +5213,8 @@ MonoBehaviour:
   damage: 10
   playerCamera: {fileID: 0}
   lineRenderer: {fileID: 0}
+  lineDecayAmount: 0.6
+  maxLineRadus: 0.5
   reloadTime: 0.3
 --- !u!120 &1215732613
 LineRenderer:
@@ -5265,7 +5269,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.2280693
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
