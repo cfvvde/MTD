@@ -26,16 +26,14 @@ public class weapon : MonoBehaviour
     // runs every 10ms
     private IEnumerator lineDecay()
     {
-        while (true)
+        while (this)
         {
-            if (lineRadius > 0)
-            {
-                lineRenderer.endWidth = lineRadius;
-                lineRenderer.startWidth = lineRadius;
-                lineRadius -= lineDecayAmount;
-            }
+            lineRenderer.endWidth = lineRadius;
+            lineRenderer.startWidth = lineRadius;
+            lineRadius -= lineDecayAmount;
             yield return new WaitForSeconds(0.01f);
         }
+        yield return new WaitForSeconds(lineDecayAmount);
     }
 
     void FixedUpdate()
