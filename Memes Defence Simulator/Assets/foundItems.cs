@@ -1,3 +1,4 @@
+using Dialogue;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections.LowLevel.Unsafe;
@@ -11,11 +12,12 @@ public class foundItems : MonoBehaviour
     public static bool foundMarksman;
     public Dialog dialog;
     private bool inRange = false;
-
+    public DialogueStory dialoge;
+    public GameObject dial;
     private void TriggerDialog()
     {
-        FindObjectOfType<DialogManager>().StartDialog(dialog);
-        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        dial.SetActive(true);
+        
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -30,9 +32,10 @@ public class foundItems : MonoBehaviour
 
         if (inRange == true && Input.GetKeyDown(KeyCode.E))
         {
+            TriggerDialog();
             itemFindEntety.SetActive(false);
             foundMarksman = true;
-            TriggerDialog();
+
         }
 
 
