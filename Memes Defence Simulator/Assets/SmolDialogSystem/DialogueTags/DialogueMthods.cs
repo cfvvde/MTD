@@ -12,4 +12,5 @@ public class DialogueMthods : MonoBehaviour
     {
         Debug.Log("1");
     }
+
 }

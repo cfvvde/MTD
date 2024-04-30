@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 91
+  controlID: 38
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -356,7 +356,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/SmolDialogSystem/Dialogs
+    - Assets/fonts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -364,16 +364,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/SmolDialogSystem/Dialogs
+  - Assets/fonts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\cfvvd\Documents\GitHub\MTD\Memes Defence Simulator
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 332}
-    m_SelectedIDs: 3e670000
-    m_LastClickedID: 26430
-    m_ExpandedIDs: 0000000010630000126300001463000016630000186300003863000084630000ec630000d481000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 10640000
+    m_LastClickedID: 25616
+    m_ExpandedIDs: 00000000ac630000ae630000b0630000b2630000b4630000e463000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -401,7 +401,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001063000012630000146300001663000018630000
+    m_ExpandedIDs: 00000000ac630000ae630000b0630000b2630000b4630000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -445,7 +445,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 11}
+      m_ClientGUIView: {fileID: 5}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -540,10 +540,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 6618ffffb218fffffa1affff121cffff6c25ffffb825ffffe427fffffc28ffffd82fffff2430ffff6c32ffff8433ffff0251ffff4e51ffff9653ffffac54ffff2262ffff6e62ffffb264ffffc265ffffc2c0ffffb4f0ffff12fbffffd85e0000f65e0000945f0000da5f0000de5f000046600000f660000018bd0000
+      scrollPos: {x: 0, y: 96}
+      m_SelectedIDs: d85f0000
+      m_LastClickedID: 24536
+      m_ExpandedIDs: 12fbffff945e0000205f00008a5f00004460000050600000b6600000da600000f0600000fa600000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -923,9 +923,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2063.404, y: 11.22083, z: -81.01141}
+    m_Target: {x: 154.38683, y: 124.08979, z: 30.059555}
     speed: 2
-    m_Value: {x: -2063.404, y: 11.22083, z: -81.01141}
+    m_Value: {x: 154.38683, y: 124.08979, z: 30.059555}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -971,13 +971,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.476
   m_Rotation:
-    m_Target: {x: 0.00021436502, y: -0.99277264, z: 0.1200198, w: 0.001778164}
+    m_Target: {x: -0.024658365, y: 0.2948619, z: -0.0076131513, w: -0.95519525}
     speed: 2
-    m_Value: {x: 0.00021436444, y: -0.9927699, z: 0.12001947, w: 0.001778159}
+    m_Value: {x: -0.024658274, y: 0.2948608, z: -0.0076131234, w: -0.95519173}
   m_Size:
-    m_Target: 0.9341577
+    m_Target: 151.61378
     speed: 2
-    m_Value: 0.9341577
+    m_Value: 151.61378
   m_Ortho:
     m_Target: 0
     speed: 2
