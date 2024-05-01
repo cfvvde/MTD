@@ -58,7 +58,7 @@ public class DialogueController : MonoBehaviour
 
     private void ContinueStory()
     {
-        if(CurrentStory.canContinue == false)
+        if (CurrentStory.canContinue == false)
         {
             StopCoroutine(ExitDialogueMode());
 
@@ -77,7 +77,7 @@ public class DialogueController : MonoBehaviour
             _dialogueTag.HandleTags(CurrentStory.currentTags);
 
         }
-        catch(ArgumentException ex)
+        catch (ArgumentException ex)
         {
             Debug.LogError(ex.Message);
         }

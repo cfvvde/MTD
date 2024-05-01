@@ -8,6 +8,10 @@ public class DialogueMthods : MonoBehaviour
     {
         Application.Quit();
     }
+    public void EndDialog()
+    {
+        new DialogueController().
+    }
     public void PRINT1()
     {
         Debug.Log("1");
