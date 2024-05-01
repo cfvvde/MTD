@@ -9,11 +9,18 @@ public class Wave : MonoBehaviour
     public List<float> delays = new() { 5 };
     public List<GameObject> enemObj = new();
     public List<GameObject> spawnPoints = new();
+    public float toWave = 0f;
+    public float firstDelay;
 
     public IEnumerator call()
     {
-
-        yield return new WaitForSeconds(5f);
+        toWave = firstDelay;
+        for (int h = 0; h < firstDelay; h++)
+        {
+            toWave = toWave - 1;
+            yield return new WaitForSeconds(1);
+            
+        }
 
         for (int i = 0; i < enemiesID.Count; i++)
         {
@@ -22,9 +29,15 @@ public class Wave : MonoBehaviour
 
             // Spawn the enemy
             Instantiate(enemyToSpawn, spawnPoints[rSpawn].transform.position, spawnPoints[rSpawn].transform.rotation);
-
+            toWave = delays[i];
             // Yield control for the specified delay
-            yield return new WaitForSeconds(delays[i]);
+            for (int h = 0; h < delays[i]; h++)
+            {
+                toWave = toWave - 1;
+                yield return new WaitForSeconds(1);
+                
+            }
+                
         }
     }
 }

@@ -8,6 +8,7 @@ public class clearmenu : MonoBehaviour
     public GameObject menu_background;
     public GameObject menu_settings;
     public GameObject menu_help;
+    
 
     private void Start()
     {

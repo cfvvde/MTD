@@ -21,22 +21,29 @@ public class weapon : MonoBehaviour
         {
             playerCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         }
+        lineRadius = maxLineRadus;
         StartCoroutine(lineDecay());
     }
     // runs every 10ms
     private IEnumerator lineDecay()
     {
-        while (this)
+        while (true)
         {
+            if (lineRadius > 0)
+            {
+                lineRadius -= lineDecayAmount;
+            }
+            else
+            {
+                lineRenderer.enabled = false;
+            }
             lineRenderer.endWidth = lineRadius;
             lineRenderer.startWidth = lineRadius;
-            lineRadius -= lineDecayAmount;
             yield return new WaitForSeconds(0.01f);
         }
-        yield return new WaitForSeconds(lineDecayAmount);
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (!lineRenderer && GetComponent<LineRenderer>())
         {
@@ -52,7 +59,7 @@ public class weapon : MonoBehaviour
         if (Input.GetMouseButton(0) && currentTime + reloadTime < Time.time)
         {
             currentTime = Time.time;
-            lineRadius += maxLineRadus;
+            lineRadius = maxLineRadus;
 
             Vector3 cursorPosition = Input.mousePosition;
             cursorPosition.z = playerCamera.nearClipPlane;
@@ -63,6 +70,7 @@ public class weapon : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
+                lineRenderer.enabled = true;
                 lineRenderer.SetPosition(0, transform.position);
                 lineRenderer.SetPosition(1, hit.point);
 
@@ -82,6 +90,7 @@ public class weapon : MonoBehaviour
             }
             else
             {
+                lineRenderer.enabled = true;
                 Vector3 forward = playerCamera.transform.forward.normalized;
                 Vector3 pointInFront = playerCamera.transform.position + forward * maxDistance;
 

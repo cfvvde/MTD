@@ -11,10 +11,11 @@ public class MenyStart : MonoBehaviour
     public GameObject HP_ovrlay;
     public GameObject guidispl;
     public GameObject wave1Test;
+    public GameObject toWave;
 
     void Start()
     {
-
+        toWave.SetActive(false);
         HP_ovrlay.SetActive(false);
         guidispl.SetActive(false);
     }
@@ -24,6 +25,7 @@ public class MenyStart : MonoBehaviour
         HP_ovrlay.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         guidispl.SetActive(true);
+        toWave.SetActive(true);
 
         if (wave1Test == null || !whyTheFuckThisRunsTwice)
         {
