@@ -1,5 +1,6 @@
 using Ink.Parsed;
 using Ink.Runtime;
+using Ink.UnityIntegration;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -41,14 +42,15 @@ public class DialogueController : MonoBehaviour
     }
     public void EnterDialogueMode(TextAsset inkJSON)
     {
+        
         CurrentStory = new Ink.Runtime.Story(inkJSON.text);
-
+        
         _dialogueWindow.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         ContinueStory();
     }
 
-    private IEnumerator ExitDialogueMode()
+    public IEnumerator ExitDialogueMode()
     {
         yield return new WaitForSeconds(_dialogueWindow.CoolDownNewLetter);
 

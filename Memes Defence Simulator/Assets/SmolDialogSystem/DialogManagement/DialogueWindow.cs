@@ -16,7 +16,7 @@ public class DialogueWindow : MonoBehaviour
     private DialogueChoice _dialogueChoice;
 
     public bool IsStatusAnswer { get; private set; }
-    public bool IsPlaying { get; private set; }
+    public bool IsPlaying;
     public bool CanContinueToNextLine { get; private set; }
 
     public float CoolDownNewLetter
