@@ -6,28 +6,26 @@ using UnityEngine.ProBuilder.MeshOperations;
 public class damagetoplayer : MonoBehaviour
 {
     public int dmg = 10;
-    public GameObject Player;
-    public int imunitufram = 10;
+    public GameObject Main;
+    private int imunitufram = 10;
+    public int imunitFrames = 20;
+    public AudioClip damageSound;
+
 
     private void OnTriggerEnter(UnityEngine.Collider other)
     {
-        if (other.tag == "Player")
-        {
-            playerHP HP = other.gameObject.GetComponent<playerHP>();
-            HP.TakeHit(dmg);
-
-        }
+        Main.GetComponent<AudioSource>().clip = damageSound;
 
     }
     private void OnTriggerStay(UnityEngine.Collider other)
     {
-        if (imunitufram == 10)
+        if (imunitufram == imunitFrames)
         {
             if (other.tag == "Player")
             {
+                Main.GetComponent<AudioSource>().Play();
                 playerHP HP = other.gameObject.GetComponent<playerHP>();
                 HP.TakeHit(dmg);
-
             }
             imunitufram = 0;
         }
