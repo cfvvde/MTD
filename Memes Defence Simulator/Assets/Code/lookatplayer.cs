@@ -6,7 +6,8 @@ public class lookatplayer : MonoBehaviour
 {
     public Transform cameraa;
 
-    string targetTag = "MainCamera";
+    string targetTag = "Player";
+
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class lookatplayer : MonoBehaviour
     }
     void LateUpdate()
     {
+        
         transform.LookAt(cameraa);
     }
 }

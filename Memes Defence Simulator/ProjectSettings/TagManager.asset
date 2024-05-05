@@ -9,6 +9,10 @@ TagManager:
   - Enemy
   - item
   - flor
+  - Attack1Warning
+  - Attack
+  - Attack1
+  - Attack2
   layers:
   - Default
   - TransparentFX

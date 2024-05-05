@@ -366,6 +366,8 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.21f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/3d textures/Sans_Undertale/DamageToplayerSpecial.cs"
 "Assets/3d textures/Sans_Undertale/RandomAttack.cs"
+"Assets/3d textures/Sans_Undertale/SecondA/LooakAtForAt.cs"
+"Assets/3d textures/Sans_Undertale/WarningAttack.cs"
 "Assets/bullets/DamageSkript.cs"
 "Assets/bullets/deletBulletAfterTime.cs"
 "Assets/clearmenu.cs"
