@@ -10,7 +10,7 @@ public class DamageToplayerSpecial : MonoBehaviour
     public float imunitFrames = 0f;
     public AudioClip damageSound;
 
-
+    
     private void OnTriggerEnter(UnityEngine.Collider other)
     {
         Main.GetComponent<AudioSource>().clip = damageSound;
@@ -18,6 +18,7 @@ public class DamageToplayerSpecial : MonoBehaviour
     }
     private void OnTriggerStay(UnityEngine.Collider other)
     {
+        
         if (imunitufram >= imunitFrames)
         {
             if (other.tag == "Player")

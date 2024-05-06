@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f5036378306f142af81bb8d1fe72a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 1
+  dmg: 3
   Main: {fileID: 688763300617630087}
   imunitFrames: 1
   damageSound: {fileID: 8300000, guid: e7ded7385ec218e46a02b2f2772aa688, type: 3}
@@ -275,14 +275,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2721881208724003127}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.008, y: 0.149, z: -0.0559995}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: -0.007987472, y: 0.149, z: -0.0559995}
   m_LocalScale: {x: 0.18402463, y: 0.029554874, z: 0.02313025}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2646764102681176293}
   m_Father: {fileID: 7653202060004357744}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!82 &902518907862504236
 AudioSource:
   m_ObjectHideFlags: 0

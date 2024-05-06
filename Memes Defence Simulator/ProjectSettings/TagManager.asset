@@ -13,6 +13,9 @@ TagManager:
   - Attack
   - Attack1
   - Attack2
+  - Attack3
+  - Attack3Fire
+  - Attack3Sound
   layers:
   - Default
   - TransparentFX
