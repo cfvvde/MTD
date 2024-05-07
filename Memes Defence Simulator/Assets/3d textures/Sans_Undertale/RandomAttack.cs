@@ -37,27 +37,48 @@ public class RandomAttack : MonoBehaviour
             switch (rng)
             {
                 case 0:
-                    if (firstAttackCoroutine == null)
+                    if (firstAttackCoroutine == null && secondAttackCoroutine == null && therdAttackCoroutine == null)
                     {
                         if (attack == null)
+                        {
                             firstAttackCoroutine = Firstattack();
                             StartCoroutine(firstAttackCoroutine);
-                    }
+                        }
+                        else
+                        {
+                            Destroy(attack);
+                        }
+                    }   
+                    else
+                        Destroy(attack);
                     break;
                 case 1:
-                    if (secondAttackCoroutine == null)
-                    {   
+                    if (firstAttackCoroutine == null && secondAttackCoroutine == null && therdAttackCoroutine == null)
+                    {
                         if (attack == null)
-                            secondAttackCoroutine = Secondattack();
-                            StartCoroutine(secondAttackCoroutine);
+                        { 
+                        secondAttackCoroutine = Secondattack();
+                        StartCoroutine(secondAttackCoroutine);
+                        }
+                        else
+                        {
+                            Destroy(attack);
+                        }
                     }
                     break;
                 case 2:
-                    if (therdAttackCoroutine == null)
-                    {   
+                    if (firstAttackCoroutine == null && secondAttackCoroutine == null && therdAttackCoroutine == null)
+                    {
                         if (attack == null)
+                        {
                             therdAttackCoroutine = Therdattack();
                             StartCoroutine(therdAttackCoroutine);
+                        }
+                        else
+                        {
+                            Destroy(attack);
+                        }
+                            
                     }
                     break;
             }
@@ -76,7 +97,8 @@ public class RandomAttack : MonoBehaviour
         Instantiate(attack1, pPos, playerPos.rotation);
         yield return new WaitForSeconds(3f);
         attack = GameObject.FindGameObjectWithTag("Attack1");
-        Destroy(attack);
+        if (attack != null)
+        { Destroy(attack); }
 
         firstAttackCoroutine = null;
     }
@@ -98,14 +120,15 @@ public class RandomAttack : MonoBehaviour
         pRot.z = 0;
         Instantiate(attack2, pPos, pRot);
         attack = GameObject.FindGameObjectWithTag("Attack2");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
 
         attack.GetComponent<AudioSource>().Play();
         attack.GetComponentInChildren<Animator>().enabled = true;
         attack.GetComponent<LooakAtForAt>().enabled = false;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         attack = GameObject.FindGameObjectWithTag("Attack2");
-        Destroy(attack);
+        if (attack != null)
+        { Destroy(attack); }
         secondAttackCoroutine = null;
     }
     private IEnumerator Therdattack()
@@ -120,9 +143,9 @@ public class RandomAttack : MonoBehaviour
         Instantiate(attack3, MobPos, pRot);
         attack = GameObject.FindGameObjectWithTag("Attack3");
         attack.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         attack.GetComponent<LooakAtForAt>().enabled = false;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         attack.GetComponentInChildren<Animator>().enabled = true;
         var attackfire = GameObject.FindGameObjectWithTag("Attack3Fire");
         var attackaudio = GameObject.FindGameObjectWithTag("Attack3Sound");
@@ -130,12 +153,11 @@ public class RandomAttack : MonoBehaviour
         attackaudio.GetComponent<AudioSource>().Play();
         attackfire.GetComponent<MeshRenderer>().enabled = true;
         attackfire.GetComponent<CapsuleCollider>().enabled = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         if (attackfire != null)
         {
             Destroy(attackfire);
         }
-        yield return new WaitForSeconds(0.5f);
         if (attack != null)
         { 
             Destroy(attack);

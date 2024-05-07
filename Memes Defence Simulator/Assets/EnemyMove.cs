@@ -57,7 +57,14 @@ public class EnemyMove : MonoBehaviour
     {
         if (core != null)
         {
-            health = core.GetComponent<EnemyScript>().MobHP;
+            if (core.GetComponent<EnemyScript>() != null)
+            {
+                health = core.GetComponent<EnemyScript>().MobHP;
+            }
+            else
+            {
+                health = core.GetComponent<SpecialEnemySkript>().MobHP;
+            }
         }
         else
         {

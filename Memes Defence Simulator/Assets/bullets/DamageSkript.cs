@@ -10,7 +10,14 @@ public class DamageSkript : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-            other.GetComponent<EnemyScript>().TakeDamage(DamageAmount);
+            if (other.GetComponent<EnemyScript>() != null)
+            {
+                other.GetComponent<EnemyScript>().TakeDamage(DamageAmount);
+            }
+            else
+            {
+                other.GetComponent<SpecialEnemySkript>().TakeDamage();
+            }
         }
 
     }

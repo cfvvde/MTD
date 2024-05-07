@@ -16,6 +16,9 @@ TagManager:
   - Attack3
   - Attack3Fire
   - Attack3Sound
+  - Miss1
+  - Miss
+  - MISS
   layers:
   - Default
   - TransparentFX

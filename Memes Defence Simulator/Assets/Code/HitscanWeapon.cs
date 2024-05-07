@@ -82,8 +82,14 @@ public class weapon : MonoBehaviour
                     other.GetComponent<EnemyMove>().assignCore();
                     GameObject core = other.GetComponent<EnemyMove>().core;
 
-
-                    core.GetComponent<EnemyScript>().TakeDamage(damage);
+                    if (core.GetComponent<EnemyScript>() != null)
+                    {
+                        core.GetComponent<EnemyScript>().TakeDamage(damage);
+                    }
+                    else
+                    {
+                        core.GetComponent<SpecialEnemySkript>().TakeDamage();
+                    }
                 }
                 else
                     print($"he is not an enemy");
