@@ -10,7 +10,7 @@ public class DialogueController : MonoBehaviour
 {
     private DialogueWindow _dialogueWindow;
     private DialogueTag _dialogueTag;
-
+    public GameObject Player;
     public Ink.Runtime.Story CurrentStory { get; private set; }
     private Coroutine _displayLineCoroutine;
 
@@ -47,6 +47,7 @@ public class DialogueController : MonoBehaviour
         
         _dialogueWindow.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
+        Player.GetComponentInChildren<mousemove>().enabled = false;
         ContinueStory();
     }
 

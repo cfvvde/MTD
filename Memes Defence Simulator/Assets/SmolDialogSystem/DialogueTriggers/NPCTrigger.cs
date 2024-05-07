@@ -1,8 +1,10 @@
+using System.Diagnostics.Tracing;
 using UnityEngine;
 
 public class NPCTrigger : MonoBehaviour
 {
-    [SerializeField] private TextAsset _inkJSON;
+    [SerializeField] private TextAsset _inkJSON1;
+    [SerializeField] private TextAsset _inkJSON2;
 
     private bool _isPlayerEnter;
 
@@ -26,7 +28,14 @@ public class NPCTrigger : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.E))
         {
-            _dialogueController.EnterDialogueMode(_inkJSON);
+            if (DialogueMethods.talkedtoprorok == false)
+            {
+                _dialogueController.EnterDialogueMode(_inkJSON1); 
+            }
+            else
+            {
+                _dialogueController.EnterDialogueMode(_inkJSON2);
+            }
         }
 
     }
