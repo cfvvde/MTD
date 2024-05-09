@@ -22,7 +22,7 @@ public class guiWeponChange : MonoBehaviour
             {
                 select(weapons[1]);
             }
-            if (Input.GetKey(KeyCode.Alpha8) && foundItems.foundMarksman == true)
+            if (Input.GetKey(KeyCode.Alpha8) && DialogueMethods.foundMarksman == true)
             {
                 select(weapons[7]);
             }
