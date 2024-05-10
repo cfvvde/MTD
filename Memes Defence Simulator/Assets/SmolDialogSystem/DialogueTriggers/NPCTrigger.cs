@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class NPCTrigger : MonoBehaviour
 {
+    public GameObject PressTo;
+
     [SerializeField] private TextAsset _inkJSON1;
     [SerializeField] private TextAsset _inkJSON2;
 
@@ -14,7 +16,7 @@ public class NPCTrigger : MonoBehaviour
     private void Start()
     {
         _isPlayerEnter = false;
-
+        PressTo.SetActive(false);
         _dialogueController = FindObjectOfType<DialogueController>();
         _dialogueWindow = FindObjectOfType<DialogueWindow>();
 
@@ -46,6 +48,7 @@ public class NPCTrigger : MonoBehaviour
         if (obj.GetComponent<CharacterController>() != null)
         {
             _isPlayerEnter = true;
+            PressTo.SetActive(true);
         }
     }
 
@@ -56,6 +59,8 @@ public class NPCTrigger : MonoBehaviour
         if (obj.GetComponent<CharacterController>() != null)
         {
             _isPlayerEnter = false;
+            PressTo.SetActive(false);
         }
+
     }
 }

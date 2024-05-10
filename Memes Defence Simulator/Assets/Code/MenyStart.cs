@@ -32,18 +32,7 @@ public class MenyStart : MonoBehaviour
             return;
         }
         whyTheFuckThisRunsTwice = false;
-        Wave script = wave1Test.GetComponent<Wave>();
-
-
-
-        if (script != null)
-        {
-            script.StartCoroutine(script.call());
-        }
-        else
-        {
-            Debug.LogError($"Could not find Wave component on GameObject named '{wave1Test.name}'");
-        }
+        
     }
 
 }

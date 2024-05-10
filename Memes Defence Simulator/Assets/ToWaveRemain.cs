@@ -19,11 +19,15 @@ public class ToWaveRemain : MonoBehaviour
     {
 
         delay = wave1.GetComponent<Wave>().toWave;
-        TextForDelay.text = "До волны" +
+        TextForDelay.text = "До волны  " +
             "" + delay.ToString("F0");
         if (delay <= 0)
         {
             toWaveMain.SetActive(false);
+        }
+        else
+        {
+            toWaveMain.SetActive(true);
         }
     }
 }

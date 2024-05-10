@@ -10,8 +10,15 @@ public class DialogueMethods : MonoBehaviour
     public GameObject picture;
     public GameObject Player;
 
+    public GameObject Wave1;
+    public GameObject Wave2;
+    public GameObject Wave3;
+    public GameObject Wave4;
+    public GameObject Wave5;
+
     public static bool talkedtoprorok = false;
     public static bool foundMarksman = false;
+    public static bool haveSword = false;
 
     public GameObject Pistol;
     public Texture Prorok1;
@@ -39,6 +46,24 @@ public class DialogueMethods : MonoBehaviour
     public void TalkedToProrok()
     {
         talkedtoprorok=true;
+    }
+    public void GiveSwordAndStartWave()
+    {
+        EndDialogTime5();
+        haveSword=true;
+        Wave1.SetActive(true);
+        Wave script = Wave1.GetComponent<Wave>();
+
+
+
+        if (script != null)
+        {
+            script.StartCoroutine(script.call());
+        }
+        else
+        {
+            Debug.LogError($"Could not find Wave component on GameObject named '{Wave1.name}'");
+        }
     }
     public void ExitForGame()
     {

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class weapon : MonoBehaviour
 {
+    public static bool AnimationCoolDown = false;
+
     public int damage = 10;
     public Camera playerCamera;
     public LineRenderer lineRenderer;
@@ -17,6 +19,7 @@ public class weapon : MonoBehaviour
     private float maxDistance = 100;
     private void Awake()
     {
+        
         if (!playerCamera && GameObject.FindWithTag("MainCamera").GetComponent<Camera>())
         {
             playerCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
@@ -36,11 +39,13 @@ public class weapon : MonoBehaviour
             else
             {
                 lineRenderer.enabled = false;
+                AnimationCoolDown = false;
             }
             lineRenderer.endWidth = lineRadius;
             lineRenderer.startWidth = lineRadius;
             yield return new WaitForSeconds(0.01f);
         }
+
     }
 
     void Update()
@@ -58,6 +63,7 @@ public class weapon : MonoBehaviour
 
         if (Input.GetMouseButton(0) && currentTime + reloadTime < Time.time)
         {
+            AnimationCoolDown = true;
             currentTime = Time.time;
             lineRadius = maxLineRadus;
 
@@ -103,6 +109,7 @@ public class weapon : MonoBehaviour
                 lineRenderer.SetPosition(0, transform.position);
                 lineRenderer.SetPosition(1, pointInFront);
             }
+
         }
     }
 }

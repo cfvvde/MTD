@@ -14,15 +14,15 @@ public class guiWeponChange : MonoBehaviour
     {
         if (currTime + deadTimeSeconds <= Time.time)
         {
-            if (Input.GetKey(KeyCode.Alpha1))
+            if (Input.GetKey(KeyCode.Alpha1) && DialogueMethods.haveSword == true)
             {
                 select(weapons[0]);
             }
-            if (Input.GetKey(KeyCode.Alpha2))
+            if (Input.GetKey(KeyCode.Alpha2) && weapon.AnimationCoolDown == false)
             {
                 select(weapons[1]);
             }
-            if (Input.GetKey(KeyCode.Alpha8) && DialogueMethods.foundMarksman == true)
+            if (Input.GetKey(KeyCode.Alpha8) && DialogueMethods.foundMarksman == true && weapon.AnimationCoolDown == false)
             {
                 select(weapons[7]);
             }
