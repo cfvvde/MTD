@@ -21,6 +21,8 @@ TagManager:
   - MISS
   - WAVE
   - KNIFE
+  - DEAD
+  - BackGround
   layers:
   - Default
   - TransparentFX

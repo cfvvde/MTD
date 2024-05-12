@@ -35,11 +35,20 @@ public class DialogueMethods : MonoBehaviour
     public static bool foundKnife = false;
     public static bool haveSword = false;
     public static bool haveAK = false;
+    public static bool haveMiniGun = false;
 
     public GameObject Pistol;
     public GameObject MedK;
     public GameObject Bulb;
 
+    [SerializeField] private TextAsset final0;
+    [SerializeField] private TextAsset final1;
+    [SerializeField] private TextAsset final2;
+    [SerializeField] private TextAsset final3;
+    [SerializeField] private TextAsset final4;
+
+    private DialogueController _dialogueController;
+    private DialogueWindow _dialogueWindow;
     void Delay()
     {
         dialog.SetActive(false);
@@ -127,6 +136,8 @@ public class DialogueMethods : MonoBehaviour
     }
     public void StartWave4()
     {
+        haveMiniGun = true;
+        GUI4.SetActive(true);
         Wave4.SetActive(true);
 
         Wave script = Wave4.GetComponent<Wave>();
@@ -160,6 +171,39 @@ public class DialogueMethods : MonoBehaviour
             Debug.LogError($"Could not find Wave component on GameObject named '{Wave5.name}'");
         }
         OnWave = 5;
+    }
+    public void Closegame()
+    {
+        Application.Quit();
+    }
+    public void Final()
+    {
+        _dialogueController = FindObjectOfType<DialogueController>();
+        _dialogueWindow = FindObjectOfType<DialogueWindow>();
+        var Dialog = GetComponent<DialogueWindow>();
+        Delay();
+        Dialog.IsPlaying = false;
+        if (PashalkiCount == 0)
+        {
+            _dialogueController.EnterDialogueMode(final0);
+        }
+        if (PashalkiCount == 1)
+        {
+            _dialogueController.EnterDialogueMode(final1);
+        }
+        if (PashalkiCount == 2)
+        {
+            _dialogueController.EnterDialogueMode(final2);
+        }
+        if (PashalkiCount == 3)
+        {
+            _dialogueController.EnterDialogueMode(final3);
+        }
+        if (PashalkiCount == 4)
+        {
+            _dialogueController.EnterDialogueMode(final4);
+        }
+
     }
     public void ExitForGame()
     {
