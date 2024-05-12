@@ -1,33 +1,38 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - BezumecTalk
     - CooldownTag
     - DamageSkript
-    - DialogManager
-    - Dialogue.AnswerButtons
-    - Dialogue.DialogueStory
-    - Dialogue.DialogueSwitcher
-    - Dialogue.DialogueWindow
+    - DamageToplayerSpecial
     - DialogueChoice
     - DialogueController
-    - DialogueMthods
+    - DialogueMethods
     - DialogueTag
     - DialogueWindow
     - EnemyMove
     - EnemyScript
     - FindNPCdial
+    - LooakAtForAt
     - MenuSet
     - MenyStart
     - MethodTag
+    - MissLook
     - NPCTrigger
+    - RandomAttack
+    - RandomAttack2
+    - RandomAttacki1
     - SHouts
     - SpeakerTag
+    - SpecialEnemySkript
+    - Straj
     - Tags
+    - ToWaveRemain
     - Wave
+    - YouCantUseIt
     - attackscript
     - clearmenu
     - damagetoplayer
-    - foundItems
     - guiWeponChange
     - lookatplayer
     - mem_help
@@ -46,6 +51,8 @@ ScriptsOnlyBuild:
     InkEditor.dll:
     - Ink.UnityIntegration.InkCompiler
     - Ink.UnityIntegration.InkLibrary
+    Unity.AI.Navigation.dll:
+    - Unity.AI.Navigation.NavMeshSurface
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro:
@@ -60,6 +67,14 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -75,10 +90,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   serializedClasses:
-    Assembly-CSharp:
-    - Dialog
-    - Dialogue.DialogueStory/Answer
-    - Dialogue.DialogueStory/Story
     Cinemachine:
     - Cinemachine.CinemachineBlendDefinition
     - Cinemachine.CinemachineBrain/BrainEvent
@@ -147,14 +158,8 @@ ScriptsOnlyBuild:
     fullTypeName: DialogueController
     methodName: MakeChoice
   - assembly: Assembly-CSharp
-    fullTypeName: DialogManager
-    methodName: DisplayNextSentance
-  - assembly: Assembly-CSharp
     fullTypeName: return_BTN
     methodName: ButtonPressedReturn
-  - assembly: Assembly-CSharp
-    fullTypeName: DialogManager
-    methodName: DisplayNextSentance
   sceneClasses:
     Assets/Scenes/NewScene.unity:
     - Class: 1
@@ -190,37 +195,37 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1604}
+      Script: {instanceID: 1608}
     - Class: 114
-      Script: {instanceID: 1656}
+      Script: {instanceID: 1658}
     - Class: 114
-      Script: {instanceID: 1712}
+      Script: {instanceID: 2444}
     - Class: 114
-      Script: {instanceID: 2438}
+      Script: {instanceID: 2760}
     - Class: 114
-      Script: {instanceID: 2756}
+      Script: {instanceID: 2968}
     - Class: 114
-      Script: {instanceID: 2962}
+      Script: {instanceID: 3288}
     - Class: 114
-      Script: {instanceID: 3282}
+      Script: {instanceID: 4600}
     - Class: 114
-      Script: {instanceID: 4588}
+      Script: {instanceID: 5510}
     - Class: 114
-      Script: {instanceID: 5492}
+      Script: {instanceID: 5798}
     - Class: 114
-      Script: {instanceID: 5778}
+      Script: {instanceID: 6322}
     - Class: 114
-      Script: {instanceID: 6300}
+      Script: {instanceID: 6698}
     - Class: 114
-      Script: {instanceID: 6672}
+      Script: {instanceID: 7182}
     - Class: 114
-      Script: {instanceID: 7154}
+      Script: {instanceID: 7870}
     - Class: 114
-      Script: {instanceID: 7844}
+      Script: {instanceID: 7966}
     - Class: 114
-      Script: {instanceID: 7938}
+      Script: {instanceID: 8066}
     - Class: 114
-      Script: {instanceID: 8038}
+      Script: {instanceID: 31326}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -285,117 +290,129 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1604}
+      Script: {instanceID: 1588}
     - Class: 114
-      Script: {instanceID: 1656}
+      Script: {instanceID: 1590}
     - Class: 114
-      Script: {instanceID: 1712}
+      Script: {instanceID: 1608}
     - Class: 114
-      Script: {instanceID: 2302}
+      Script: {instanceID: 1658}
     - Class: 114
-      Script: {instanceID: 2346}
+      Script: {instanceID: 1998}
     - Class: 114
-      Script: {instanceID: 2438}
+      Script: {instanceID: 2074}
     - Class: 114
-      Script: {instanceID: 2490}
+      Script: {instanceID: 2306}
     - Class: 114
-      Script: {instanceID: 2542}
+      Script: {instanceID: 2350}
     - Class: 114
-      Script: {instanceID: 2678}
+      Script: {instanceID: 2442}
     - Class: 114
-      Script: {instanceID: 2692}
+      Script: {instanceID: 2444}
     - Class: 114
-      Script: {instanceID: 2756}
+      Script: {instanceID: 2682}
     - Class: 114
-      Script: {instanceID: 2822}
+      Script: {instanceID: 2696}
     - Class: 114
-      Script: {instanceID: 2962}
+      Script: {instanceID: 2760}
     - Class: 114
-      Script: {instanceID: 3282}
+      Script: {instanceID: 2826}
     - Class: 114
-      Script: {instanceID: 4190}
+      Script: {instanceID: 2968}
     - Class: 114
-      Script: {instanceID: 4264}
+      Script: {instanceID: 3288}
     - Class: 114
-      Script: {instanceID: 4376}
+      Script: {instanceID: 3336}
     - Class: 114
-      Script: {instanceID: 4588}
+      Script: {instanceID: 3586}
     - Class: 114
-      Script: {instanceID: 4642}
+      Script: {instanceID: 4088}
     - Class: 114
-      Script: {instanceID: 4660}
+      Script: {instanceID: 4202}
     - Class: 114
-      Script: {instanceID: 4858}
+      Script: {instanceID: 4276}
     - Class: 114
-      Script: {instanceID: 5072}
+      Script: {instanceID: 4388}
     - Class: 114
-      Script: {instanceID: 5196}
+      Script: {instanceID: 4600}
     - Class: 114
-      Script: {instanceID: 5236}
+      Script: {instanceID: 4670}
     - Class: 114
-      Script: {instanceID: 5416}
+      Script: {instanceID: 4726}
     - Class: 114
-      Script: {instanceID: 5424}
+      Script: {instanceID: 4806}
     - Class: 114
-      Script: {instanceID: 5492}
+      Script: {instanceID: 5088}
     - Class: 114
-      Script: {instanceID: 5546}
+      Script: {instanceID: 5130}
     - Class: 114
-      Script: {instanceID: 5778}
+      Script: {instanceID: 5188}
     - Class: 114
-      Script: {instanceID: 6084}
+      Script: {instanceID: 5216}
     - Class: 114
-      Script: {instanceID: 6300}
+      Script: {instanceID: 5434}
     - Class: 114
-      Script: {instanceID: 6672}
+      Script: {instanceID: 5442}
     - Class: 114
-      Script: {instanceID: 6808}
+      Script: {instanceID: 5510}
     - Class: 114
-      Script: {instanceID: 7006}
+      Script: {instanceID: 5564}
     - Class: 114
-      Script: {instanceID: 7154}
+      Script: {instanceID: 5696}
     - Class: 114
-      Script: {instanceID: 7166}
+      Script: {instanceID: 5774}
     - Class: 114
-      Script: {instanceID: 7262}
+      Script: {instanceID: 6104}
     - Class: 114
-      Script: {instanceID: 7446}
+      Script: {instanceID: 6202}
     - Class: 114
-      Script: {instanceID: 7832}
+      Script: {instanceID: 6322}
     - Class: 114
-      Script: {instanceID: 7844}
+      Script: {instanceID: 6616}
     - Class: 114
-      Script: {instanceID: 7896}
+      Script: {instanceID: 6698}
+    - Class: 114
+      Script: {instanceID: 6834}
+    - Class: 114
+      Script: {instanceID: 7032}
+    - Class: 114
+      Script: {instanceID: 7078}
+    - Class: 114
+      Script: {instanceID: 7182}
+    - Class: 114
+      Script: {instanceID: 7288}
+    - Class: 114
+      Script: {instanceID: 7472}
+    - Class: 114
+      Script: {instanceID: 7858}
+    - Class: 114
+      Script: {instanceID: 7870}
+    - Class: 114
+      Script: {instanceID: 7922}
     - Class: 114
       Script: {instanceID: 7938}
     - Class: 114
-      Script: {instanceID: 8026}
+      Script: {instanceID: 7966}
     - Class: 114
-      Script: {instanceID: 8038}
+      Script: {instanceID: 8054}
     - Class: 114
-      Script: {instanceID: 8358}
+      Script: {instanceID: 8066}
     - Class: 114
-      Script: {instanceID: 8594}
+      Script: {instanceID: 8158}
     - Class: 114
-      Script: {instanceID: 25484}
+      Script: {instanceID: 8202}
     - Class: 114
-      Script: {instanceID: 25502}
+      Script: {instanceID: 8270}
     - Class: 114
-      Script: {instanceID: 25534}
+      Script: {instanceID: 8392}
     - Class: 114
-      Script: {instanceID: 25546}
+      Script: {instanceID: 8626}
     - Class: 114
-      Script: {instanceID: 25560}
+      Script: {instanceID: 30578}
     - Class: 114
-      Script: {instanceID: 25584}
+      Script: {instanceID: 570546}
     - Class: 114
-      Script: {instanceID: 25594}
-    - Class: 114
-      Script: {instanceID: 25632}
-    - Class: 114
-      Script: {instanceID: 25682}
-    - Class: 114
-      Script: {instanceID: 25692}
+      Script: {instanceID: 570562}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -433,6 +450,18 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
+      Hash: 829a4865035b484d164e51db86cdd88b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: BezumecTalk
+  - hash:
+      serializedVersion: 2
+      Hash: 56afa2b6e53a861304b395bc8a16e5da
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: FindNPCdial
+  - hash:
+      serializedVersion: 2
       Hash: 540882762544409cc4530e60db00e951
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -461,12 +490,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Image
-  - hash:
-      serializedVersion: 2
-      Hash: 099f7ade86605cbde74b8d41c801d469
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: DialogManager
   - hash:
       serializedVersion: 2
       Hash: f45600bcc886206dd55a3208474aad61
@@ -547,6 +570,18 @@ ScriptsOnlyBuild:
     className: CinemachineCameraOffset
   - hash:
       serializedVersion: 2
+      Hash: 4c7194cf82dff3e47f414d2f9976f389
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MissLook
+  - hash:
+      serializedVersion: 2
+      Hash: 33642f82b8c073dd6526f2346e10a5de
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DialogueChoice
+  - hash:
+      serializedVersion: 2
       Hash: 674f86f72fc0bf1ef8d192a4dea794c8
     assemblyName: Cinemachine
     namespaceName: Cinemachine
@@ -601,22 +636,22 @@ ScriptsOnlyBuild:
     className: UnityOnJointBreakMessageListener
   - hash:
       serializedVersion: 2
+      Hash: f1ecab34e02ed7f869d51f8536092f8e
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DialogueTag
+  - hash:
+      serializedVersion: 2
       Hash: 1ab136900c0edaeeb49424c852595030
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 60373b65a8078239186806049f88f82a
+      Hash: fa6b648922bc6a4e033f02fda53f566a
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: foundItems
-  - hash:
-      serializedVersion: 2
-      Hash: 4b3a7fe3875ef18a388115030da6e3c7
-    assemblyName: Assembly-CSharp
-    namespaceName: Dialogue
-    className: DialogueSwitcher
+    className: YouCanUseIt
   - hash:
       serializedVersion: 2
       Hash: 1321993db8249e1e05e1e0492b2bbdc3
@@ -823,6 +858,12 @@ ScriptsOnlyBuild:
     className: Benchmark04
   - hash:
       serializedVersion: 2
+      Hash: ff20b41944a16265490afd18182b50ba
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: NPCTrigger
+  - hash:
+      serializedVersion: 2
       Hash: d90629714fa6b0145fcaffc87f5c6559
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -881,6 +922,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSelectMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 8e09d9c5afc8ebc40e9c16c653710a76
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SpecialEnemySkript
   - hash:
       serializedVersion: 2
       Hash: 5b8b7230ad968399f6726aa1269dcdcb
@@ -977,6 +1024,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnPointerExitMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: b07fdcf7042e68055660741d50a55a31
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MethodTag
   - hash:
       serializedVersion: 2
       Hash: 1deda86fe7ffd8587afcfe68a02d034c
@@ -1123,12 +1176,6 @@ ScriptsOnlyBuild:
     className: MenuSet
   - hash:
       serializedVersion: 2
-      Hash: 053ddc8e743b38992af852d57ed0e00f
-    assemblyName: Assembly-CSharp
-    namespaceName: Dialogue
-    className: AnswerButtons
-  - hash:
-      serializedVersion: 2
       Hash: 9078325c2a6f6a2d9612ade897511860
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
@@ -1145,6 +1192,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
     className: TMPro_InstructionOverlay
+  - hash:
+      serializedVersion: 2
+      Hash: 1f035c0bdce4b48234531e744b9430d9
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DialogueController
   - hash:
       serializedVersion: 2
       Hash: a75a568ce902366f4e82fc98ca6108f5
@@ -1165,10 +1218,22 @@ ScriptsOnlyBuild:
     className: CinemachinePOV
   - hash:
       serializedVersion: 2
+      Hash: 59b987274aff00585821d7b41f12a686
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: WarningAttack
+  - hash:
+      serializedVersion: 2
       Hash: dc31d211c7459841fe4f406ae2e51480
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
     className: TextConsoleSimulator
+  - hash:
+      serializedVersion: 2
+      Hash: 7bf047ea6944ebd0076658be9c47d36d
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CooldownTag
   - hash:
       serializedVersion: 2
       Hash: 5a1710e1ce9ddf5eb06e0d2693171f49
@@ -1177,10 +1242,10 @@ ScriptsOnlyBuild:
     className: ObjectSpin
   - hash:
       serializedVersion: 2
-      Hash: 56afa2b6e53a861304b395bc8a16e5da
+      Hash: 89c1a41e610accb709fec7da43d70209
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: FindNPCdial
+    className: SansAttack1
   - hash:
       serializedVersion: 2
       Hash: 7e9cad7f71f9cc52f699bbd2d2a75734
@@ -1237,6 +1302,12 @@ ScriptsOnlyBuild:
     className: CinemachineBlendListCamera
   - hash:
       serializedVersion: 2
+      Hash: e5acbf9ec21444a5e5f6f98dabb73d83
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ToWaveRemain
+  - hash:
+      serializedVersion: 2
       Hash: ceeb6c51b89f022a3deb7b3408c66745
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
@@ -1249,13 +1320,19 @@ ScriptsOnlyBuild:
     className: NavMeshLink
   - hash:
       serializedVersion: 2
+      Hash: 90be068af65b5f242d80453e349bb3aa
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DialogueWindow
+  - hash:
+      serializedVersion: 2
       Hash: f2098fcd8ee983a05ec192f63904298f
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnEndDragMessageListener
   - hash:
       serializedVersion: 2
-      Hash: c8acef6a9f1dd5f689a26576f33ce67c
+      Hash: c2f071dbf3a2202e05640a90bea6ac1b
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: damagetoplayer
@@ -1283,12 +1360,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.ProBuilder
     namespaceName: UnityEngine.ProBuilder
     className: ColliderBehaviour
-  - hash:
-      serializedVersion: 2
-      Hash: 70ab1441085602aec39be5320bf848bc
-    assemblyName: Assembly-CSharp
-    namespaceName: Dialogue
-    className: DialogueStory
   - hash:
       serializedVersion: 2
       Hash: cce88ec4737eb3cf0faab402148b7c4e
@@ -1423,6 +1494,12 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
+      Hash: 1926289e0c5148fc76f1b641cc754655
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Straj
+  - hash:
+      serializedVersion: 2
       Hash: bf0842d88681628b29beb00b5e2ab785
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1489,6 +1566,12 @@ ScriptsOnlyBuild:
     className: CinemachineConfiner2D
   - hash:
       serializedVersion: 2
+      Hash: 0d75499ea73aca9181576649f902e046
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Tags
+  - hash:
+      serializedVersion: 2
       Hash: ef38c1407dba8c1f5d69f5db61a694fe
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1537,10 +1620,22 @@ ScriptsOnlyBuild:
     className: Benchmark03
   - hash:
       serializedVersion: 2
+      Hash: 730278d3306b91174b41102cbc161f67
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: LooakAtForAt
+  - hash:
+      serializedVersion: 2
       Hash: 4f353524ce6564e40764f1ea080b2d85
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnTriggerStay2DMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 17fc182923ed0d29ace06c044ac25343
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ButtonTrigger
   - hash:
       serializedVersion: 2
       Hash: 9104447b683bf70406fa01f12ecb564a
@@ -1615,7 +1710,7 @@ ScriptsOnlyBuild:
     className: TMP_FrameRateCounter
   - hash:
       serializedVersion: 2
-      Hash: 801e0037c58709fcb47a88f3884ec0eb
+      Hash: e6d5dbaec9d3534641efddde4ba4f19b
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Wave
@@ -1625,6 +1720,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnDragMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: dc54d4b9cbbeba71a7a2e2573f8b883a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SpeakerTag
   - hash:
       serializedVersion: 2
       Hash: 20a120e55ad3ab65556328d5fd8309dd
@@ -1655,12 +1756,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: return_BTN
-  - hash:
-      serializedVersion: 2
-      Hash: 2f468c9aff53b80b5f239b81ab0d9d5b
-    assemblyName: Assembly-CSharp
-    namespaceName: Dialogue
-    className: DialogueWindow
   - hash:
       serializedVersion: 2
       Hash: 007cdf5f8025adc0b0d6bd71e664c865
@@ -1819,7 +1914,7 @@ ScriptsOnlyBuild:
     className: EnemyMove
   - hash:
       serializedVersion: 2
-      Hash: 4c0d240de7592b07bd3e68d1979d2efa
+      Hash: a032a66aaedccbaba2560139d70ed8e6
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: MenyStart
@@ -1841,6 +1936,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: lookatplayer
+  - hash:
+      serializedVersion: 2
+      Hash: f9468ae81c241789abb2ca267abd0971
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DamageToplayerSpecial
   - hash:
       serializedVersion: 2
       Hash: c53a777c2ccb4dfd8edfaa1477e0f0ae
@@ -1879,10 +1980,22 @@ ScriptsOnlyBuild:
     className: UnityOnParticleCollisionMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 37547bee2fb11d390cd33daa9eb9f35b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: YouCantUseIt
+  - hash:
+      serializedVersion: 2
       Hash: 0f5a086d4d028363983ba6ca30a01397
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnMouseOverMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 57b82ee291249e653c47edfc35e0f46d
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DialogueMethods
   - hash:
       serializedVersion: 2
       Hash: 2c583ad0ac85d03e8700dd05fdcb46cb
@@ -1909,6 +2022,12 @@ ScriptsOnlyBuild:
     className: TMP_PhoneNumberValidator
   - hash:
       serializedVersion: 2
+      Hash: 37a76eacdf96932ec72346415869914c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: RandomAttack
+  - hash:
+      serializedVersion: 2
       Hash: c4ae0ec287bc3cde0bc98e1a65f9cef7
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
@@ -1933,7 +2052,7 @@ ScriptsOnlyBuild:
     className: TeleType
   - hash:
       serializedVersion: 2
-      Hash: 9bb0744463318c200123b19d895f388d
+      Hash: bc888b6f8fa5e85510cbd379f9cb5004
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: weapon
@@ -1949,12 +2068,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
     className: VertexZoom
-  - hash:
-      serializedVersion: 2
-      Hash: 7f2548cd2cb1b81872901fca21dfe3be
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: DialogTrigger
   - hash:
       serializedVersion: 2
       Hash: 5c07dd30a788898a98f349bde9e84e19
@@ -2017,73 +2130,19 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 41a4f014c1837fcab9bf2275702e7d61
+      Hash: ae4d04ee3f1e185373596b613fa5dacb
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: DialogueController
+    className: RandomAttacki1
   - hash:
       serializedVersion: 2
-      Hash: 33642f82b8c073dd6526f2346e10a5de
+      Hash: a3e34000ef880f59518bb7e21d258432
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: DialogueChoice
-  - hash:
-      serializedVersion: 2
-      Hash: 5bcb4d8cf161e63a355d8b90987a165f
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: DialogueWindow
-  - hash:
-      serializedVersion: 2
-      Hash: f1ecab34e02ed7f869d51f8536092f8e
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: DialogueTag
-  - hash:
-      serializedVersion: 2
-      Hash: b8a8e25fee92c5b8b5646b8d932b2e27
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: NPCTrigger
-  - hash:
-      serializedVersion: 2
-      Hash: 17fc182923ed0d29ace06c044ac25343
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: ButtonTrigger
-  - hash:
-      serializedVersion: 2
-      Hash: 273a242c150821f35df23b4b0dcc019b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: DialogueMthods
-  - hash:
-      serializedVersion: 2
-      Hash: 0d75499ea73aca9181576649f902e046
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Tags
-  - hash:
-      serializedVersion: 2
-      Hash: b07fdcf7042e68055660741d50a55a31
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: MethodTag
-  - hash:
-      serializedVersion: 2
-      Hash: 7bf047ea6944ebd0076658be9c47d36d
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: CooldownTag
-  - hash:
-      serializedVersion: 2
-      Hash: dc54d4b9cbbeba71a7a2e2573f8b883a
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: SpeakerTag
+    className: RandomAttack2
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
   - Assets/Scenes/NewScene.unity
-  playerPath: C:/Users/cfvvd/Desktop/MDS_buildVersions/PreAtmoix_23_03_2024/Memes
+  playerPath: C:/Users/cfvvd/OneDrive/Desktop/MDS_buildVersions/AfterAtomix_24_04_2024/Memes
     Defence Simulator.exe

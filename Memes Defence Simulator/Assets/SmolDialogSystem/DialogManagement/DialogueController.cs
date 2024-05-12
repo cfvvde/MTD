@@ -1,6 +1,4 @@
-using Ink.Parsed;
-using Ink.Runtime;
-using Ink.UnityIntegration;
+
 using System;
 using System.Collections;
 using UnityEngine;
@@ -47,6 +45,7 @@ public class DialogueController : MonoBehaviour
         
         _dialogueWindow.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
+        Player.GetComponent<CharacterController>().enabled = false;
         Player.GetComponentInChildren<mousemove>().enabled = false;
         ContinueStory();
     }

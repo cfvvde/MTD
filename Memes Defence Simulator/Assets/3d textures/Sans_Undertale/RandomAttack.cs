@@ -9,24 +9,27 @@ public class RandomAttack : MonoBehaviour
     public GameObject attack2;
     public GameObject attack3;  
     public GameObject attack1Warning;
-    public GameObject player;
+    private GameObject player;
     private int rng;
-    private float currentTime = 0;
+    public float currentTime = 0;
     public float timeDiff = 3;
+
+
     private Transform playerPos;
     private Vector3 pPos;
     private Quaternion pRot;
-    private GameObject attack;
-    private GameObject attackWarn;
     private IEnumerator firstAttackCoroutine;
     private IEnumerator secondAttackCoroutine;
     private IEnumerator therdAttackCoroutine;
     private int rAttackPosiX;
     private int rAttackPosiZ;
 
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
-
-    private void FixedUpdate()
+    private void Update()
     {
         
         if (currentTime + timeDiff <= Time.time)
@@ -37,47 +40,29 @@ public class RandomAttack : MonoBehaviour
             switch (rng)
             {
                 case 0:
-                    if (firstAttackCoroutine == null && secondAttackCoroutine == null && therdAttackCoroutine == null)
-                    {
-                        if (attack == null)
-                        {
-                            firstAttackCoroutine = Firstattack();
-                            StartCoroutine(firstAttackCoroutine);
-                        }
-                        else
-                        {
-                            Destroy(attack);
-                        }
-                    }   
-                    else
-                        Destroy(attack);
+
+                    firstAttackCoroutine = Firstattack();
+                    StartCoroutine(firstAttackCoroutine);
+
                     break;
                 case 1:
                     if (firstAttackCoroutine == null && secondAttackCoroutine == null && therdAttackCoroutine == null)
                     {
-                        if (attack == null)
-                        { 
+
                         secondAttackCoroutine = Secondattack();
                         StartCoroutine(secondAttackCoroutine);
-                        }
-                        else
-                        {
-                            Destroy(attack);
-                        }
+
+
                     }
                     break;
                 case 2:
                     if (firstAttackCoroutine == null && secondAttackCoroutine == null && therdAttackCoroutine == null)
                     {
-                        if (attack == null)
-                        {
-                            therdAttackCoroutine = Therdattack();
-                            StartCoroutine(therdAttackCoroutine);
-                        }
-                        else
-                        {
-                            Destroy(attack);
-                        }
+
+                        therdAttackCoroutine = Therdattack();
+                        StartCoroutine(therdAttackCoroutine);
+
+
                             
                     }
                     break;
@@ -89,21 +74,37 @@ public class RandomAttack : MonoBehaviour
 
         playerPos = player.GetComponent<Transform>();
         pPos = playerPos.position;
-        Instantiate(attack1Warning, pPos, playerPos.rotation);
-        attackWarn = GameObject.FindGameObjectWithTag("Attack1Warning");
-        attackWarn.GetComponent<AudioSource>().Play();
+        pRot = playerPos.rotation;
+        Instantiate(attack1Warning, pPos, pRot);
+        var attackWarn = GameObject.FindGameObjectsWithTag("Attack1Warning");
+        for (int i = 0; i < attackWarn.Length; i++)
+        {
+            attackWarn[i].GetComponent<AudioSource>().Play();
+        }
         yield return new WaitForSeconds(1f);
-        Destroy(attackWarn);
-        Instantiate(attack1, pPos, playerPos.rotation);
-        yield return new WaitForSeconds(3f);
-        attack = GameObject.FindGameObjectWithTag("Attack1");
-        if (attack != null)
-        { Destroy(attack); }
-
+        for (int i = 0; i < attackWarn.Length; i++)
+        {
+            Destroy(attackWarn[i]);
+        }
+        Instantiate(attack1, pPos, pRot);
+        var attack = GameObject.FindGameObjectsWithTag("Attack1");
+        yield return new WaitForSeconds(1f);
+        for (int i = 0; i < attack.Length; i++)
+        {
+            Invoke("DelayAR", 0.5f);
+        }
+        StopCoroutine(firstAttackCoroutine);
         firstAttackCoroutine = null;
+
+    }
+    private void DelayAR()
+    {
+        var attack = GameObject.FindGameObjectsWithTag("Attack1");
+        Destroy(attack[0]);
     }
     private IEnumerator Secondattack()
     {
+        
         var array = new int[] { 1, -1 };
 
         array = new int[] { 1, -1 };
@@ -111,6 +112,22 @@ public class RandomAttack : MonoBehaviour
         playerPos = player.GetComponent<Transform>();
         pPos = playerPos.position;
         pRot = playerPos.rotation;
+        rAttackPosiX = (int)array[Random.Range(0, array.Length)] * 30;
+        rAttackPosiZ = (int)array[Random.Range(0, array.Length)] * 15;
+        pPos.z = pPos.z + (float)rAttackPosiZ;
+        pPos.x = pPos.x + (float)rAttackPosiX;
+        pRot.x = 0;
+        pRot.y = 0;
+        pRot.z = 0;
+        Instantiate(attack2, pPos, pRot);
+        rAttackPosiX = (int)array[Random.Range(0, array.Length)] * 15;
+        rAttackPosiZ = (int)array[Random.Range(0, array.Length)] * 30;
+        pPos.z = pPos.z + (float)rAttackPosiZ;
+        pPos.x = pPos.x + (float)rAttackPosiX;
+        pRot.x = 0;
+        pRot.y = 0;
+        pRot.z = 0;
+        Instantiate(attack2, pPos, pRot);
         rAttackPosiX = (int)array[Random.Range(0, array.Length)] * 15;
         rAttackPosiZ = (int)array[Random.Range(0, array.Length)] * 15;
         pPos.z = pPos.z + (float)rAttackPosiZ;
@@ -119,51 +136,89 @@ public class RandomAttack : MonoBehaviour
         pRot.y = 0;
         pRot.z = 0;
         Instantiate(attack2, pPos, pRot);
-        attack = GameObject.FindGameObjectWithTag("Attack2");
-        yield return new WaitForSeconds(0.5f);
+        var attacks = GameObject.FindGameObjectsWithTag("Attack2");
+        yield return new WaitForSeconds(0.2f);
+        for (int i = 0; i < attacks.Length; i++)
+        {
+            attacks[i].GetComponent<AudioSource>().Play();
+            attacks[i].GetComponentInChildren<Animator>().enabled = true;
+            attacks[i].GetComponent<LooakAtForAt>().enabled = false;
+        }
+        yield return new WaitForSeconds(1.2f);
+        attacks = GameObject.FindGameObjectsWithTag("Attack2");
+        for (int i = 0; i < attacks.Length; i++)
+        {
+            Destroy(attacks[i]);
+        }
 
-        attack.GetComponent<AudioSource>().Play();
-        attack.GetComponentInChildren<Animator>().enabled = true;
-        attack.GetComponent<LooakAtForAt>().enabled = false;
-        yield return new WaitForSeconds(0.4f);
-        attack = GameObject.FindGameObjectWithTag("Attack2");
-        if (attack != null)
-        { Destroy(attack); }
+        StopCoroutine(secondAttackCoroutine);
         secondAttackCoroutine = null;
+
     }
+
     private IEnumerator Therdattack()
     {
+        var array = new int[] { 1, -1, 2, -2, 3, -3, 4, -4 };
 
+        array = new int[] { 1, -1, 2, -2, 3, -3, 4, -4 };
         var MobPos = this.GetComponent<Transform>().position;
-        MobPos.x = MobPos.x - 5f;
-        MobPos.y = MobPos.y + 3f;
+        MobPos.x = MobPos.x + (int)array[Random.Range(0, array.Length)] * 4;
+        MobPos.y = MobPos.y + Mathf.Abs((int)array[Random.Range(0, array.Length)]*2);
         pRot.x = 0;
         pRot.y = 0;
         pRot.z = 0;
         Instantiate(attack3, MobPos, pRot);
-        attack = GameObject.FindGameObjectWithTag("Attack3");
-        attack.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(0.25f);
-        attack.GetComponent<LooakAtForAt>().enabled = false;
-        yield return new WaitForSeconds(0.25f);
-        attack.GetComponentInChildren<Animator>().enabled = true;
-        var attackfire = GameObject.FindGameObjectWithTag("Attack3Fire");
-        var attackaudio = GameObject.FindGameObjectWithTag("Attack3Sound");
-        attack.GetComponent<LooakAtForAt>().enabled = false;
-        attackaudio.GetComponent<AudioSource>().Play();
-        attackfire.GetComponent<MeshRenderer>().enabled = true;
-        attackfire.GetComponent<CapsuleCollider>().enabled = true;
-        yield return new WaitForSeconds(1f);
-        if (attackfire != null)
+        MobPos = this.GetComponent<Transform>().position;
+        MobPos.x = MobPos.x + (int)array[Random.Range(0, array.Length)] * 4;
+        MobPos.y = MobPos.y + Mathf.Abs((int)array[Random.Range(0, array.Length)] * 2); 
+        Instantiate(attack3, MobPos, pRot);
+        MobPos = this.GetComponent<Transform>().position;
+        MobPos.x = MobPos.x + (int)array[Random.Range(0, array.Length)] * 4;
+        MobPos.y = MobPos.y + Mathf.Abs((int)array[Random.Range(0, array.Length)] * 2);
+        Instantiate(attack3, MobPos, pRot);
+        var attacks = GameObject.FindGameObjectsWithTag("Attack3");
+        for (int i = 0; i < attacks.Length; i++)
         {
-            Destroy(attackfire);
+            attacks[i].GetComponent<AudioSource>().Play();
         }
-        if (attack != null)
-        { 
-            Destroy(attack);
+        yield return new WaitForSeconds(0.25f);
+        for (int i = 0; i < attacks.Length; i++)
+        {
+            attacks[i].GetComponent<LooakAtForAt>().enabled = false;
         }
-        
+        yield return new WaitForSeconds(0.25f);
+        for (int i = 0; i < attacks.Length; i++)
+        {
+            attacks[i].GetComponentInChildren<Animator>().enabled = true;
+        }
+        var attackfire = GameObject.FindGameObjectsWithTag("Attack3Fire");
+        var attackaudio = GameObject.FindGameObjectsWithTag("Attack3Sound");
+        for (int i = 0; i < attacks.Length; i++)
+        {
+            attacks[i].GetComponent<LooakAtForAt>().enabled = false;
+        }
+
+        attackaudio[0].GetComponent<AudioSource>().Play();
+
+        for (int i = 0; i < attackfire.Length; i++)
+        {
+            attackfire[i].GetComponent<MeshRenderer>().enabled = true;
+            attackfire[i].GetComponent<CapsuleCollider>().enabled = true;
+        }
+        yield return new WaitForSeconds(1f);
+        for (int i = 0; i < attackfire.Length; i++)
+        {
+            Destroy(attackfire[i]);
+        }
+        for (int i = 0; i < attacks.Length; i++)
+        {
+            Destroy(attacks[i]);
+        }
+
+        StopCoroutine(therdAttackCoroutine);
         therdAttackCoroutine = null;
+
+
     }
 
 

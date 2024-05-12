@@ -12,7 +12,7 @@ public class SpecialEnemySkript : MonoBehaviour
     public GameObject main;
     public GameObject texture;
     public GameObject Miss;
-
+    public GameObject Drop;
 
     void Update()
     {
@@ -20,8 +20,36 @@ public class SpecialEnemySkript : MonoBehaviour
     }
     void Delay()
     {
-
+        var posit = main.transform.position;
+        var rotat = main.transform.rotation;
+        Instantiate(Drop, posit, rotat);
+        var attack1 = GameObject.FindGameObjectsWithTag("Attack1");
+        var attack2 = GameObject.FindGameObjectsWithTag("Attack2");
+        var attack3 = GameObject.FindGameObjectsWithTag("Attack3");
+        var attack1Warn = GameObject.FindGameObjectsWithTag("Attack1Warning");
+        var attack3fire = GameObject.FindGameObjectsWithTag("Attack3Fire");
+        for (int i = 0; i < attack1.Length; i++)
+        {
+            Destroy(attack1[i]);
+        }
+        for (int i = 0; i < attack2.Length; i++)
+        {
+            Destroy(attack2[i]);
+        }
+        for (int i = 0; i < attack3.Length; i++)
+        {
+            Destroy(attack3[i]);
+        }
+        for (int i = 0; i < attack1Warn.Length; i++)
+        {
+            Destroy(attack1Warn[i]);
+        }
+        for (int i = 0; i < attack3fire.Length; i++)
+        {
+            Destroy(attack3fire[i]);
+        }
         Destroy(main);
+
     }
     public void TakeDamage()
     {
@@ -43,6 +71,31 @@ public class SpecialEnemySkript : MonoBehaviour
             Target.SetActive(false);
             DeathAnim.SetActive(true);
             Invoke("Delay", 2.0f);
+            var attack1 = GameObject.FindGameObjectsWithTag("Attack1");
+            var attack2 = GameObject.FindGameObjectsWithTag("Attack2");
+            var attack3 = GameObject.FindGameObjectsWithTag("Attack3");
+            var attack1Warn = GameObject.FindGameObjectsWithTag("Attack1Warning");
+            var attack3fire = GameObject.FindGameObjectsWithTag("Attack3Fire");
+            for (int i = 0; i < attack1.Length; i++)
+            {
+                Destroy(attack1[i]);
+            }
+            for (int i = 0; i < attack2.Length; i++)
+            {
+                Destroy(attack2[i]);
+            }
+            for (int i = 0; i < attack3.Length; i++)
+            {
+                Destroy(attack3[i]);
+            }
+            for (int i = 0; i < attack1Warn.Length; i++)
+            {
+                Destroy(attack1Warn[i]);
+            }
+            for (int i = 0; i < attack3fire.Length; i++)
+            {
+                Destroy(attack3fire[i]);
+            }
         }
         else
         {

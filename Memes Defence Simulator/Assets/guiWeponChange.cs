@@ -22,9 +22,21 @@ public class guiWeponChange : MonoBehaviour
             {
                 select(weapons[1]);
             }
+            if (Input.GetKey(KeyCode.Alpha6) && DialogueMethods.foundBulb == true && weapon.AnimationCoolDown == false)
+            {
+                select(weapons[5]);
+            }
+            if (Input.GetKey(KeyCode.Alpha7) && DialogueMethods.foundMedK == true && weapon.AnimationCoolDown == false)
+            {
+                select(weapons[6]);
+            }
             if (Input.GetKey(KeyCode.Alpha8) && DialogueMethods.foundMarksman == true && weapon.AnimationCoolDown == false)
             {
                 select(weapons[7]);
+            }
+            if (Input.GetKey(KeyCode.Alpha9) && DialogueMethods.foundKnife == true && weapon.AnimationCoolDown == false)
+            {
+                select(weapons[8]);
             }
 
         }

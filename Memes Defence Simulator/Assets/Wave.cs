@@ -12,6 +12,7 @@ public class Wave : MonoBehaviour
     public float toWave = 0f;
     public float firstDelay;
 
+
     public IEnumerator call()
     {
         toWave = firstDelay;
@@ -37,7 +38,12 @@ public class Wave : MonoBehaviour
                 yield return new WaitForSeconds(1);
                 
             }
-                
+               
         }
+        for (int i = 0; i < spawnPoints.Count; i++)
+        {
+            spawnPoints[i].SetActive(false);
+        }
+        
     }
 }

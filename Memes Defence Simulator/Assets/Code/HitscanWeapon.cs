@@ -13,6 +13,7 @@ public class weapon : MonoBehaviour
     float lineRadius = 0;
     public float lineDecayAmount = 0.01f;
     public float maxLineRadus = 1f;
+    public bool HaveSound;
 
     float currentTime = 0;
     public float reloadTime = 0.3f;
@@ -25,12 +26,12 @@ public class weapon : MonoBehaviour
             playerCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         }
         lineRadius = maxLineRadus;
-        StartCoroutine(lineDecay());
+        
     }
     // runs every 10ms
     private IEnumerator lineDecay()
     {
-        while (true)
+        while (lineRadius > 0)
         {
             if (lineRadius > 0)
             {
@@ -39,12 +40,13 @@ public class weapon : MonoBehaviour
             else
             {
                 lineRenderer.enabled = false;
-                AnimationCoolDown = false;
             }
             lineRenderer.endWidth = lineRadius;
             lineRenderer.startWidth = lineRadius;
             yield return new WaitForSeconds(0.01f);
         }
+        lineRenderer.enabled = false;
+        AnimationCoolDown = false;
 
     }
 
@@ -62,7 +64,11 @@ public class weapon : MonoBehaviour
 
 
         if (Input.GetMouseButton(0) && currentTime + reloadTime < Time.time)
-        {
+        {   
+            if(HaveSound == true)
+            {
+                this.GetComponent<AudioSource>().Play();
+            }
             AnimationCoolDown = true;
             currentTime = Time.time;
             lineRadius = maxLineRadus;
@@ -109,6 +115,7 @@ public class weapon : MonoBehaviour
                 lineRenderer.SetPosition(0, transform.position);
                 lineRenderer.SetPosition(1, pointInFront);
             }
+            StartCoroutine(lineDecay());
 
         }
     }

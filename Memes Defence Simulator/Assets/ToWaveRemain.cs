@@ -8,26 +8,28 @@ public class ToWaveRemain : MonoBehaviour
     public TextMeshProUGUI TextForDelay;
     private float delay;
     public GameObject toWaveMain;
-    public GameObject wave1;
 
 
     private void Start()
     {
-        
+        toWaveMain.SetActive(false);
     }
     private void FixedUpdate()
     {
-
-        delay = wave1.GetComponent<Wave>().toWave;
-        TextForDelay.text = "До волны  " +
-            "" + delay.ToString("F0");
-        if (delay <= 0)
+        var wave1 = GameObject.FindGameObjectWithTag("WAVE");
+        if (wave1 != null)
         {
-            toWaveMain.SetActive(false);
-        }
-        else
-        {
-            toWaveMain.SetActive(true);
+            delay = wave1.GetComponent<Wave>().toWave;
+            TextForDelay.text = "До волны  " +
+                "" + delay.ToString("F0");
+            if (delay <= 0)
+            {
+                toWaveMain.SetActive(false);
+            }
+            else
+            {
+                toWaveMain.SetActive(true);
+            }
         }
     }
 }

@@ -15,14 +15,19 @@ public class attackscript : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-
+    private void Delay()
+    {
+        weapon.AnimationCoolDown = false;
+    }
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
+            weapon.AnimationCoolDown = true;
             rb.enabled = false;
             rb.enabled = true;
             animator.SetBool("attack", true);
+
         }
         else if (Input.GetMouseButtonUp(0))
         {
@@ -30,6 +35,7 @@ public class attackscript : MonoBehaviour
             
             animator.SetBool("attack", false);
             rb.enabled = false;
+            Invoke("Delay", 1);
         }
     }
 }

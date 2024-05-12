@@ -25,7 +25,6 @@ public class MenyStart : MonoBehaviour
         HP_ovrlay.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         guidispl.SetActive(true);
-        toWave.SetActive(true);
 
         if (wave1Test == null || !whyTheFuckThisRunsTwice)
         {

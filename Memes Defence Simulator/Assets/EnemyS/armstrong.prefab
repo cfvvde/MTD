@@ -1217,7 +1217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d14fb286868077f4f8e24860622c4ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MobHP: 100
+  MobHP: 350
   Healthbar: {fileID: 2964606108513573722}
   DeathAnim: {fileID: 875243658578160439}
   Target: {fileID: 7831773819824806563}

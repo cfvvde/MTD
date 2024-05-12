@@ -19,6 +19,8 @@ TagManager:
   - Miss1
   - Miss
   - MISS
+  - WAVE
+  - KNIFE
   layers:
   - Default
   - TransparentFX
